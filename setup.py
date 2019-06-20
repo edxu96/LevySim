@@ -2,8 +2,10 @@
 # author: Edward J. Xu
 # date: 190620
 
-import SimLevy
-import random
+import sim_levy as sl
+import func_dist as fd
+# import scipy.stats as stats
+# import matplotlib.pyplot as plt
 
 
 def test():
@@ -12,8 +14,8 @@ def test():
     lamb = 1
     num_sim = 100
     vec_para = 1
-    func_sim_dist = lambda para: random.expovariate(para)
-    p, a, m = SimLevy.sim(num_sim, mu, sigma, lamb, func_sim_dist, vec_para)
+    func_sim_dist = lambda para: fd.exp(para)
+    p, a, m = sl.sim(num_sim, mu, sigma, lamb, func_sim_dist, vec_para)
     print("p = {}".format(p))
     print("a = {}".format(a))
     print("m = {}".format(m))

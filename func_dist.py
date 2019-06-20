@@ -2,5 +2,7 @@
 # author: Edward J. Xu
 # date: 190620
 
+import random
 
-def
+def exp(para):
+    return random.expovariate(para)
