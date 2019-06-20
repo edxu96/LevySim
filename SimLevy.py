@@ -20,7 +20,7 @@ def cal(mu, sigma, a_pre, m_pre, y, lamb):
     return v, w, p, a, m
 
 
-def sim(num_sim, mu, sigma, lamb, lamb_y):
+def sim(num_sim, mu, sigma, lamb, func_sim_dist, vec_para):
     # initialize
     list_v = [0] * num_sim
     list_w = [0] * num_sim
@@ -38,7 +38,7 @@ def sim(num_sim, mu, sigma, lamb, lamb_y):
     for i in range(0, num_sim):
         list_inter[i] = random.expovariate(lamb)
         list_t[i] = list_t[i - 1] + list_inter[i]
-        list_y[i] = random.expovariate(1)
+        list_y[i] = func_sim_dist(vec_para)
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal_levy(mu, sigma, list_a[i - 1], list_m[i - 1],
                                                                          list_y[i], lamb)
     return list_p[num_sim - 1], list_a[num_sim - 1], list_m[num_sim - 1]
