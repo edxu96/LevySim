@@ -21,8 +21,11 @@ def task1():
     list_a_result = [0] * n_sim
     list_m_result = [0] * n_sim
     for i in range(n_sim):
-        list_p_result[i], list_a_result[i], list_m_result[i] = sl.sim(
+        datf, list_result = sl.sim(
             n_sample, mu, sigma, lamb, func_sim_dist, vec_para)
+        list_p_result[i] = list_result[0]
+        list_a_result[i] = list_result[1]
+        list_m_result[i] = list_result[2]
     vi.hist(list_p_result)
     vi.hist(list_a_result)
     vi.hist(list_m_result)
@@ -36,11 +39,13 @@ def test():
     n_sample = 100
     vec_para = 1
     func_sim_dist = lambda para: fd.exp(para)
-    p, a, m = sl.sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para)
-    print("p = {}".format(p))
-    print("a = {}".format(a))
-    print("m = {}".format(m))
+    datf, list_result = sl.sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para)
+    print("p = {}".format(list_result[0]))
+    print("a = {}".format(list_result[1]))
+    print("m = {}".format(list_result[2]))
 
 
-# test()
-list_p_result, list_a_result, list_m_result = task1()
+test()
+# list_p_result, list_a_result, list_m_result = task1()
+
+

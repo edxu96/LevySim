@@ -5,6 +5,7 @@
 
 import numpy as np
 import random
+import pandas as pd
 
 
 def cal(a_pre, m_pre, y, phi1, phi2):
@@ -12,7 +13,7 @@ def cal(a_pre, m_pre, y, phi1, phi2):
     w = random.expovariate(phi2)
     p = a_pre + (v - w)
     a = a_pre + (v - w) + y
-    m = max(m_pre, a_pre + v, a_pre + (v - w) + y)
+    m = max(m_pre, a_pre + v, a)
     return v, w, p, a, m
 
 
@@ -39,4 +40,15 @@ def sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para):
         list_t[i] = list_t[i - 1] + list_inter[i]
         list_y[i] = func_sim_dist(vec_para)
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
-    return list_p[n_sample - 1], list_a[n_sample - 1], list_m[n_sample - 1]
+    datf = pd.DataFrame({
+        'v': list_v,
+        'w': list_w,
+        'y': list_y,
+        'p': list_p,
+        'a': list_a,
+        'm': list_m,
+        't': list_t,
+        'inter': list_inter
+    })
+    list_result = [list_p[n_sample - 1], list_a[n_sample - 1], list_m[n_sample - 1]]
+    return datf, list_result

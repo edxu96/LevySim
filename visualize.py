@@ -12,5 +12,9 @@ def hist(list):
     return list_density
 
 
-def line(list):
-    
+def line(list_t, list_p, list_a):
+    plt.scatter(list_t, list_p)
+    plt.scatter(list_t, list_a)
+    plt.show()
+
+
