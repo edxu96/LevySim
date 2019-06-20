@@ -40,7 +40,7 @@ def sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para):
         list_t[i] = list_t[i - 1] + list_inter[i]
         list_y[i] = func_sim_dist(vec_para)
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
-    datf = pd.DataFrame({
+    df = pd.DataFrame({
         'v': list_v,
         'w': list_w,
         'y': list_y,
@@ -51,4 +51,4 @@ def sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para):
         'inter': list_inter
     })
     list_result = [list_p[n_sample - 1], list_a[n_sample - 1], list_m[n_sample - 1]]
-    return datf, list_result
+    return df, list_result
