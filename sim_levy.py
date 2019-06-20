@@ -17,7 +17,7 @@ def cal(a_pre, m_pre, y, phi1, phi2):
     return v, w, p, a, m
 
 
-def sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para):
+def sim(n_sample, mu, sigma, lamb, func_dist_y):
     # Calculate phi
     phi1 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
     phi2 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
@@ -31,14 +31,14 @@ def sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para):
     list_y = [0] * n_sample
     list_inter = [0] * n_sample
     # Initialization
-    list_y[0] = func_sim_dist(vec_para)
+    list_y[0] = func_dist_y()
     list_p[0] = 0
     list_a[0] = 0
     list_m[0] = 0
     for i in range(0, n_sample):
         list_inter[i] = random.expovariate(lamb)
         list_t[i] = list_t[i - 1] + list_inter[i]
-        list_y[i] = func_sim_dist(vec_para)
+        list_y[i] = func_dist_y()
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
     df = pd.DataFrame({
         'v': list_v,

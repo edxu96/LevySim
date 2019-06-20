@@ -3,7 +3,7 @@
 # date: 190620
 
 import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 
 
 def hist(list_result, num_bin, whe_show, name_fig):
@@ -14,6 +14,7 @@ def hist(list_result, num_bin, whe_show, name_fig):
     list_position = [i + len_edge / 2 for i in list_position]
     n_sample = len(list_result)
     fig = plt.figure(figsize=(18, 8))
+    plt.style.use("fivethirtyeight")
     plt.plot(list_position, list_density)
     plt.xlabel('Class')
     plt.ylabel('Density')
@@ -26,11 +27,12 @@ def hist(list_result, num_bin, whe_show, name_fig):
 
 def scatter_ap(list_t, list_p, list_a, whe_show, name_fig):
     fig = plt.figure(figsize=(18, 8))
+    plt.style.use("fivethirtyeight")
     plt.scatter(list_t, list_p, label="pre-jump")
     plt.scatter(list_t, list_a, label="after-jump")
     plt.xlabel('Time')
     plt.ylabel('Value')
-    plt.legend(loc='lower right')
+    plt.legend()  # loc='upper right'
     plt.title('Scatter Plot of Result from Simulations', fontsize=15)
     if whe_show:  # Whether to show the plot
         plt.show()
