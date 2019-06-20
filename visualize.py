@@ -12,4 +12,5 @@ def hist(list):
     return list_density
 
 
-
+def line(list):
+    
