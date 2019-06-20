@@ -40,6 +40,7 @@ def test():
     vec_para = 1
     func_sim_dist = lambda para: fd.exp(para)
     datf, list_result = sl.sim(n_sample, mu, sigma, lamb, func_sim_dist, vec_para)
+    vi.scatter_2(list_t=datf.t, list_p=datf.p, list_a=datf.a)
     print("p = {}".format(list_result[0]))
     print("a = {}".format(list_result[1]))
     print("m = {}".format(list_result[2]))
