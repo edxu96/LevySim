@@ -2,8 +2,8 @@
 # author: Edward J. Xu
 # date: 190620
 
-import random
-
+import numpy as np
+import scipy.stats as st
 
 def exp(beta):
     """
@@ -13,5 +13,11 @@ def exp(beta):
     :return: generated value
     """
     return random.expovariate(beta)
+
+
+# rvs(a, loc=0, scale=1, size=1, random_state=None)
+    
+def erlang(shape):
+    return st.erlang(shape).rvs()
 
 
