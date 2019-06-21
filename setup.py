@@ -86,22 +86,45 @@ def task2():
 
 
 def task3():
+    """
+    Plot the multiple simulation of a set of parameters
+    :return:
+    """
     mu = 1  # mean = 1 / beta
     sigma = 1  # mean = 1 / beta
     lamb = 1  # mean = 1 / beta
-    beta = 1
+    beta = 0.1
     n_sample = 1000
-    n_sim = 10
+    n_sim = 100
     func_dist_y = select_dist(beta)
     _, _, _, mat_s, mat_p, mat_a, mat_m = sl.sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
-    vi.line_multi_pa(mat_s, mat_p, mat_a, '9')
+    vi.line_multi_pa(mat_s, mat_p, mat_a, '10')
+
+
+def task3_2dim():
+    mu = 1  # mean = 1 / beta
+    sigma = 1  # mean = 1 / beta
+    lamb = 1  # mean = 1 / beta
+    n_sample = 1000
+    n_sim = 100
+    # Different beta s
+    beta_1 = 0.1
+    beta_2 = 1
+    func_dist_y_1 = select_dist(beta_1)
+    func_dist_y_2 = select_dist(beta_2)
+    # Simulation
+    _, _, _, mat_s_1, mat_p_1, mat_a_1, _ = sl.sim_multi(mu, sigma, lamb, func_dist_y_1, n_sample, n_sim)
+    _, _, _, mat_s_2, mat_p_2, mat_a_2, _ = sl.sim_multi(mu, sigma, lamb, func_dist_y_2, n_sample, n_sim)
+    # Plot the result
+    vi.line_multi_pa_2(mat_s_1, mat_p_1, mat_a_1, mat_s_2, mat_p_2, mat_a_2, '11')
 
 
 def main():
     # test()
     # task1()
     # task2()
-    task3()
+    # task3()
+    task3_2dim()
 
 
 main()

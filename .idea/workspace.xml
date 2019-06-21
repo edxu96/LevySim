@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85980bcf-f45c-4f1e-8db0-d5a4ab68899c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/images/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sim_levy.py" beforeDir="false" afterPath="$PROJECT_DIR$/sim_levy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualize.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+            <state relative-caret-position="511">
+              <caret line="108" column="14" lean-forward="true" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
               <folding>
                 <element signature="e#69#90#0" expanded="true" />
               </folding>
@@ -27,34 +28,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sim_levy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1049">
-              <caret line="73" column="63" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
-              <folding>
-                <element signature="e#69#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/visualize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="143" column="65" lean-forward="true" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="65" />
-              <folding>
-                <element signature="e#69#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/func_dist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="515">
+              <caret line="170" column="32" lean-forward="true" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
               <folding>
                 <element signature="e#69#87#0" expanded="true" />
               </folding>
@@ -182,12 +159,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561029986746</updated>
-      <workItem from="1561029990753" duration="25530000" />
+      <workItem from="1561029990753" duration="26878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25530000" />
+    <option name="totallyTimeSpent" value="26878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -200,7 +177,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.055793993" />
@@ -261,8 +237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/visualize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="143" column="65" lean-forward="true" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="65" />
+        <state relative-caret-position="515">
+          <caret line="170" column="32" lean-forward="true" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
           <folding>
             <element signature="e#69#87#0" expanded="true" />
           </folding>
@@ -271,8 +247,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+        <state relative-caret-position="511">
+          <caret line="108" column="14" lean-forward="true" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
           <folding>
             <element signature="e#69#90#0" expanded="true" />
           </folding>

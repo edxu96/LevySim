@@ -157,3 +157,24 @@ def line_multi_pa(mat_s, mat_p, mat_a, name_fig, whe_show=False):
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
+
+
+def line_multi_pa_2(mat_s_1, mat_p_1, mat_a_1, mat_s_2, mat_p_2, mat_a_2, name_fig, whe_show=False):
+    n_sim = len(mat_p_1[:, 1])
+    # if n_sim != len(mat_a_1[:, 1]):
+    #     logging.error("len(mat_p[:, 1]) and len(mat_a[:, 1]) are not equal!")
+    fig = plt.figure(figsize=(18, 8))
+    plt.style.use("fivethirtyeight")
+    for i in range(n_sim):
+        list_ss_1, list_pa_1 = inter_pa(mat_s_1[i, :], mat_p_1[i, :], mat_a_1[i, :])
+        list_ss_2, list_pa_2 = inter_pa(mat_s_2[i, :], mat_p_2[i, :], mat_a_2[i, :])
+        plt.plot(list_ss_1, list_pa_1, linewidth=0.5, c='tomato')
+        plt.plot(list_ss_2, list_pa_2, linewidth=0.5, c='lightskyblue')
+    plt.xlabel('time "s"')
+    plt.ylabel('Value')
+    plt.title('Line Plot of Multiple Simulation from Different Parameters', fontsize=15)
+    plt.tight_layout()
+    if whe_show:  # Whether to show the plot
+        plt.show()
+    fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
+
