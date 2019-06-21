@@ -2,25 +2,20 @@
 # author: Edward J. Xu
 # date: 190620
 
-
-import numpy as np
 import random
 import pandas as pd
 
 
 def cal(a_pre, m_pre, y, phi1, phi2):
-    v = random.expovariate(phi1)
-    w = random.expovariate(phi2)
+    v = random.expovariate(1 / phi1)
+    w = random.expovariate(1 / phi2)
     p = a_pre + (v - w)
     a = a_pre + (v - w) + y
     m = max(m_pre, a_pre + v, a)
     return v, w, p, a, m
 
 
-def sim(n_sample, mu, sigma, lamb, func_dist_y):
-    # Calculate phi
-    phi1 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    phi2 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
+def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     # Pre-assign lists
     list_v = [0] * n_sample
     list_w = [0] * n_sample
@@ -51,5 +46,7 @@ def sim(n_sample, mu, sigma, lamb, func_dist_y):
         's': list_s,
         'inter': list_inter
     })
-    list_result = [list_p[n_sample - 1], list_a[n_sample - 1], list_m[n_sample - 1]]
-    return df, list_result
+    p_result = list_p[n_sample - 1]
+    a_result = list_a[n_sample - 1]
+    m_result = list_m[n_sample - 1]
+    return df, p_result, a_result, m_result
