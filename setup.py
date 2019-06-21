@@ -110,15 +110,13 @@ def task3_2dim():
     # Different beta s
     list_beta = [0.01, 0.1, 1]
     n_set = len(list_beta)
-    list_func_dist_y = [None] * n_set
     list_mat_s = [None] * n_set
     list_mat_p = [None] * n_set
     list_mat_a = [None] * n_set
+    # Being Simulation
     for i in range(n_set):
-        list_func_dist_y[i] = select_dist(list_beta[i])
-        # Simulation
         _, _, _, list_mat_s[i], list_mat_p[i], list_mat_a[i], _ = sl.sim_multi(
-            mu, sigma, lamb, list_func_dist_y[i], n_sample, n_sim)
+            mu, sigma, lamb, select_dist(list_beta[i]), n_sample, n_sim)
     # Plot the result
     vi.line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, '12')
 
