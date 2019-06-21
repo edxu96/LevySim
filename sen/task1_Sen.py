@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy.random as npr
 import math
 
-nLoop = 10
-jump = 1000
+nLoop = 1
+jump = 10
 
 lambda1 = 1
 lambda2 = 1
