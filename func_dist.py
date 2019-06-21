@@ -5,14 +5,13 @@
 import random
 
 
-def exp(mean):
+def exp(beta):
     """
     Generate x from exponential distribution
         Built-in Python: pdf(x, beta) 1 / beta * exp(- x / beta)
-        mean = 1 / beta
-    :param mean: mean of the desired exponential distribution
+    :param beta: parameter in desired exponential distribution, mean = 1 / beta
     :return: generated value
     """
-    return random.expovariate(1 / mean)
+    return random.expovariate(beta)
 
 
