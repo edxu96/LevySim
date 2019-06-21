@@ -4,6 +4,7 @@
 
 import random
 
+
 def exp(lamb):
     """
     Generate x from exponential distribution

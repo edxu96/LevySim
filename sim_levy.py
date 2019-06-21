@@ -27,7 +27,7 @@ def sim(n_sample, mu, sigma, lamb, func_dist_y):
     list_p = [0] * n_sample
     list_a = [0] * n_sample
     list_m = [0] * n_sample
-    list_t = [0] * n_sample
+    list_s = [0] * n_sample
     list_y = [0] * n_sample
     list_inter = [0] * n_sample
     # Initialization
@@ -35,11 +35,12 @@ def sim(n_sample, mu, sigma, lamb, func_dist_y):
     list_p[0] = 0
     list_a[0] = 0
     list_m[0] = 0
-    for i in range(0, n_sample):
+    for i in range(1, n_sample):
         list_inter[i] = random.expovariate(lamb)
-        list_t[i] = list_t[i - 1] + list_inter[i]
+        list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
-        list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
+        list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(
+            list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
     df = pd.DataFrame({
         'v': list_v,
         'w': list_w,
@@ -47,7 +48,7 @@ def sim(n_sample, mu, sigma, lamb, func_dist_y):
         'p': list_p,
         'a': list_a,
         'm': list_m,
-        't': list_t,
+        's': list_s,
         'inter': list_inter
     })
     list_result = [list_p[n_sample - 1], list_a[n_sample - 1], list_m[n_sample - 1]]
