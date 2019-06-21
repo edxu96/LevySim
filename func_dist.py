@@ -4,5 +4,7 @@
 
 import random
 
-def exp(para):
-    return random.expovariate(para)
+def exp(lamb):
+    return random.expovariate(lamb)
+
+
