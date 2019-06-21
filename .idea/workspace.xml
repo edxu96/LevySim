@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85980bcf-f45c-4f1e-8db0-d5a4ab68899c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/func_dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/func_dist.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sim_levy.py" beforeDir="false" afterPath="$PROJECT_DIR$/sim_levy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualize.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="93" column="21" lean-forward="true" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+            <state relative-caret-position="477">
+              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
               <folding>
                 <element signature="e#69#90#0" expanded="true" />
               </folding>
@@ -29,10 +29,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sim_levy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="1049">
+              <caret line="73" column="63" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
               <folding>
-                <element signature="e#70#83#0" expanded="true" />
+                <element signature="e#69#82#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/visualize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="114" column="63" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
+            <state relative-caret-position="409">
+              <caret line="143" column="65" lean-forward="true" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="65" />
               <folding>
                 <element signature="e#69#87#0" expanded="true" />
               </folding>
@@ -83,6 +83,10 @@
       <find>lamb</find>
       <find>sigma</find>
       <find>select_dist</find>
+      <find>sim_multi</find>
+      <find>line_apm</find>
+      <find>list_result</find>
+      <find>jump_ap</find>
     </findStrings>
     <replaceStrings>
       <replace>lamb</replace>
@@ -91,6 +95,9 @@
       <replace>n_sample</replace>
       <replace>func_dist_y</replace>
       <replace>list_s</replace>
+      <replace>line_pam</replace>
+      <replace>sl.sim_multi</replace>
+      <replace>jump_pa</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -105,8 +112,8 @@
         <option value="$PROJECT_DIR$/FuncDist.py" />
         <option value="$PROJECT_DIR$/simlevy.py" />
         <option value="$PROJECT_DIR$/plot.py" />
-        <option value="$PROJECT_DIR$/sim_levy.py" />
         <option value="$PROJECT_DIR$/func_dist.py" />
+        <option value="$PROJECT_DIR$/sim_levy.py" />
         <option value="$PROJECT_DIR$/visualize.py" />
         <option value="$PROJECT_DIR$/setup.py" />
       </list>
@@ -175,12 +182,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561029986746</updated>
-      <workItem from="1561029990753" duration="23451000" />
+      <workItem from="1561029990753" duration="25530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23451000" />
+    <option name="totallyTimeSpent" value="25530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -232,16 +239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sim_levy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#70#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/func_dist.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -252,10 +249,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sim_levy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1049">
+          <caret line="73" column="63" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
+          <folding>
+            <element signature="e#69#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/visualize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="114" column="63" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
+        <state relative-caret-position="409">
+          <caret line="143" column="65" lean-forward="true" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="65" />
           <folding>
             <element signature="e#69#87#0" expanded="true" />
           </folding>
@@ -264,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="93" column="21" lean-forward="true" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+        <state relative-caret-position="477">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
           <folding>
             <element signature="e#69#90#0" expanded="true" />
           </folding>

@@ -6,7 +6,6 @@ import sim_levy as sl
 import func_dist as fd
 import visualize as vi
 from functools import partial
-import numpy as np
 import time
 # import scipy.stats as stats
 
@@ -24,24 +23,11 @@ def test():
     beta = 1  # [beta in distribution of y],
     func_dist_y = select_dist(beta)
     df, list_result = sl.sim(n_sample, mu, sigma, lamb, func_dist_y)
-    vi.jump_ap(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='4')
-    vi.line_apm(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='5')
+    vi.jump_pa(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='4')
+    vi.line_pam(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='5')
     # print("p = {}".format(list_result[0]))
     # print("a = {}".format(list_result[1]))
     # print("m = {}".format(list_result[2]))
-
-
-def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
-    # Calculate phi
-    phi1 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    phi2 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    #
-    list_p_result = [0] * n_sim
-    list_a_result = [0] * n_sim
-    list_m_result = [0] * n_sim
-    for i in range(n_sim):
-        _, list_p_result[i], list_a_result[i], list_m_result[i] = sl.sim(n_sample, phi1, phi2, lamb, func_dist_y)
-    return list_p_result, list_a_result, list_m_result
 
 
 def cal_fpp(mu, sigma, lamb, func_dist_y, n_sample, n_sim, a):
@@ -58,7 +44,7 @@ def cal_fpp(mu, sigma, lamb, func_dist_y, n_sample, n_sim, a):
     """
     time_start = time.time()
     # your code
-    _, _, list_m_result = sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
+    _, _, list_m_result, _, _, _ = sl.sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
     prob = sum([i > a for i in list_m_result]) / len(list_m_result)
     time_elapse = time.time() - time_start
     print("Time elapsed = {} ;".format(time_elapse))
@@ -73,7 +59,7 @@ def task1():
     n_sample = 1000
     n_sim = 1000
     func_dist_y = select_dist(beta)
-    list_p_result, list_a_result, list_m_result = sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
+    list_p_result, list_a_result, list_m_result, _, _, _, _ = sl.sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
     vi.hist(list_p_result, 30, 'p', '1')
     vi.hist(list_a_result, 30, 'a', '2')
     vi.hist(list_m_result, 30, 'm', '3')
@@ -99,10 +85,23 @@ def task2():
     vi.line_fpp(list_a, list_prob, '8')
 
 
+def task3():
+    mu = 1  # mean = 1 / beta
+    sigma = 1  # mean = 1 / beta
+    lamb = 1  # mean = 1 / beta
+    beta = 1
+    n_sample = 1000
+    n_sim = 10
+    func_dist_y = select_dist(beta)
+    _, _, _, mat_s, mat_p, mat_a, mat_m = sl.sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
+    vi.line_multi_pa(mat_s, mat_p, mat_a, '9')
+
+
 def main():
     # test()
     # task1()
-    task2()
+    # task2()
+    task3()
 
 
 main()
