@@ -34,7 +34,7 @@ def hyperexp(p1, lbd1, p2, lbd2):
            
     : return: generated value once
     '''
-    return st.rv_discrete(values = ([st.expon.rvs(scale = 1/ lbd1), st.expon.rvs(scale = 1/ lbd2)],[p1,p2])).rvs(size = 100)
+    return st.rv_discrete(values = ([st.expon.rvs(scale = 1/ lbd1), st.expon.rvs(scale = 1/ lbd2)],[p1,p2])).rvs(size = 1)
 
 def pareto(alpha):
     """
