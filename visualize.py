@@ -171,6 +171,7 @@ def get_list_color(n_set):
     while len(list_color) < n_set:
         list_color = list_color_raw * k
         k = k + 1
+        print(k)
     return list_color
 
 

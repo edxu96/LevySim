@@ -7,11 +7,12 @@ import func_dist as fd
 import visualize as vi
 from functools import partial
 import time
+import logging
 # import scipy.stats as stats
 
 
 def select_dist(para):
-    func = partial(fd.exp, beta=para)
+    func = partial(fd.exp, lbd=para)
     return func
 
 
@@ -101,24 +102,33 @@ def task3():
     vi.line_multi_pa(mat_s, mat_p, mat_a, '10')
 
 
+def check_len(list_list):
+    n_check = len(list_list)
+    length = len(list_list[1])
+    if sum([len(j) == length for j in list_list]) != n_check:
+        logging.error("Length of lists of parameters are not equal!")
+
+
 def task3_2dim():
-    mu = 1  # mean = 1 / beta
-    sigma = 1  # mean = 1 / beta
-    lamb = 1  # mean = 1 / beta
-    n_sample = 1000
-    n_sim = 100
+    n_sample = 100
+    n_sim = 10
     # Different beta s
     list_beta = [0.01, 0.1, 1]
+    list_mu = [1, 1, 1]  # mean = 1 / beta
+    list_sigma = [1, 1, 1]  # mean = 1 / beta
+    list_lamb = [1, 1, 1]  # mean = 1 / beta
     n_set = len(list_beta)
+    check_len([list_beta, list_mu, list_sigma, list_lamb])
+    # Initialize the lists for result
     list_mat_s = [None] * n_set
     list_mat_p = [None] * n_set
     list_mat_a = [None] * n_set
     # Being Simulation
     for i in range(n_set):
         _, _, _, list_mat_s[i], list_mat_p[i], list_mat_a[i], _ = sl.sim_multi(
-            mu, sigma, lamb, select_dist(list_beta[i]), n_sample, n_sim)
+            list_mu[i], list_sigma[i], list_lamb[i], select_dist(list_beta[i]), n_sample, n_sim)
     # Plot the result
-    vi.line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, '12')
+    vi.line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, '13')
 
 
 def main():
