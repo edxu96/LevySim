@@ -9,8 +9,8 @@ import pandas as pd
 
 
 def cal(a_pre, m_pre, y, phi1, phi2):
-    v = random.expovariate(phi1)
-    w = random.expovariate(phi2)
+    v = random.expovariate(1 / phi1)
+    w = random.expovariate(1 / phi2)
     p = a_pre + (v - w)
     a = a_pre + (v - w) + y
     m = max(m_pre, a_pre + v, a)

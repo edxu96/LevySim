@@ -11,7 +11,7 @@ from functools import partial
 
 
 def select_dist(lamb):
-    func = partial(fd.exp, lamb=lamb)
+    func = partial(fd.exp, mean=lamb)
     return func
 
 
@@ -44,13 +44,13 @@ def test():
     func_dist_y = select_dist(lamb)
     df, list_result = sl.sim(n_sample, mu, sigma, lamb, func_dist_y)
     vi.jump_ap(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='4')
-    # vi.line_apm(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='5')
+    vi.line_apm(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='5')
     # print("p = {}".format(list_result[0]))
     # print("a = {}".format(list_result[1]))
     # print("m = {}".format(list_result[2]))
 
 
-# test()
-list_p_result, list_a_result, list_m_result = task1()
+test()
+# list_p_result, list_a_result, list_m_result = task1()
 
 
