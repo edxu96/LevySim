@@ -7,6 +7,7 @@ import func_dist as fd
 import visualize as vi
 from functools import partial
 import numpy as np
+import time
 # import scipy.stats as stats
 
 
@@ -55,8 +56,12 @@ def cal_fpp(mu, sigma, lamb, func_dist_y, n_sample, n_sim, a):
     :param a:
     :return:
     """
+    time_start = time.time()
+    # your code
     _, _, list_m_result = sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
     prob = sum([i > a for i in list_m_result]) / len(list_m_result)
+    time_elapse = time.time() - time_start
+    print("Time elapsed = {} ;".format(time_elapse))
     return prob
 
 
@@ -82,10 +87,12 @@ def task2():
     n_sample = 1000
     n_sim = 1000
     func_dist_y = select_dist(beta)
-    list_a = [10, 100, 1000]
-    # list_a = list(range(100, 2000, 50))
-    list_prob = [0] * len(list_a)
-    for i in range(len(list_a)):
+    # list_a = [10, 100, 1000, 10000, 100000, 1000000]
+    list_a = list(range(500, 10000, 100))
+    n_a = len(list_a)
+    list_prob = [0] * n_a
+    print("n_a = {}".format(n_a))
+    for i in range(n_a):
         list_prob[i] = cal_fpp(mu, sigma, lamb, func_dist_y, n_sample, n_sim, list_a[i])
     vi.line_fpp(list_a, list_prob, '6')
 
