@@ -41,13 +41,14 @@ def hist(list_result, num_bin, str_var, name_fig, whe_show=False):
     plt.xlabel('Class')
     plt.ylabel('Density')
     plt.title('Histogram of {} from {} Simulations'.format(str_var, n_sim), fontsize=15)
+    plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
     return list_density
 
 
-def jump_ap(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
+def jump_pa(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     """
     Scatter plot of all the jumps
     :param list_s:
@@ -70,12 +71,34 @@ def jump_ap(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     plt.ylabel('Value')
     plt.legend()  # loc='upper right'
     plt.title('Scatter Plot of Result from Simulations', fontsize=15)
+    plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
 
 
-def line_apm(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
+def inter_pa(list_s, list_p, list_a):
+    """
+    Obtain the list like "p_1, a_1, p_2, a_2, p_3, a_3, ..." from list of p and a
+    :param list_s:
+    :param list_a:
+    :param list_p:
+    :return: list_ss: list like "s_1, s_1, s_2, s_2, s_3, s_3, ..."
+    """
+    n = len(list_s)
+    list_pa = [0] * 2 * n
+    list_ss = [0] * 2 * n
+    if not (n == len(list_p) and n == len(list_a)):
+        logging.error("len(list_s), len(list_p) and len(list_a) are not equal!")
+    for i in range(n):
+        list_pa[2 * i] = list_p[i]
+        list_pa[2 * i + 1] = list_a[i]
+        list_ss[2 * i] = list_s[i]
+        list_ss[2 * i + 1] = list_s[i]
+    return list_ss, list_pa
+
+
+def line_pam(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     """
     Line plot of the realization
     :param list_s:
@@ -88,22 +111,14 @@ def line_apm(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     """
     fig = plt.figure(figsize=(18, 8))
     plt.style.use("fivethirtyeight")
-    n = len(list_s)
-    list_result = [0] * 2 * n
-    list_ss = [0] * 2 * n
-    if not (n == len(list_p) and n == len(list_a)):
-        logging.error("len(list_p) <> len(list_a)")
-    for i in range(n):
-        list_result[2 * i] = list_p[i]
-        list_result[2 * i + 1] = list_a[i]
-        list_ss[2 * i] = list_s[i]
-        list_ss[2 * i + 1] = list_s[i]
-    plt.plot(list_ss, list_result, label='X')
+    list_ss, list_pa = inter_pa(list_s, list_p, list_a)
+    plt.plot(list_ss, list_pa, label='X')
     plt.scatter(list_s, list_m, c='r', label='M')
     plt.xlabel('Time')
     plt.ylabel('Value')
     plt.title('Line Plot of Result from Simulations', fontsize=15)
     plt.legend()
+    plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
@@ -120,7 +135,25 @@ def line_fpp(list_a, list_prob, name_fig, whe_show=False):
     #     'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
     #     xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
     plt.title('Line Plot of First Passage Probability under Different a', fontsize=15)
+    plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
 
+
+def line_multi_pa(mat_s, mat_p, mat_a, name_fig, whe_show=False):
+    n_sim = len(mat_p[:, 1])
+    if n_sim != len(mat_a[:, 1]):
+        logging.error("len(mat_p[:, 1]) and len(mat_a[:, 1]) are not equal!")
+    fig = plt.figure(figsize=(18, 8))
+    plt.style.use("fivethirtyeight")
+    for i in range(n_sim):
+        list_ss, list_pa = inter_pa(mat_s[i, :], mat_p[i, :], mat_a[i, :])
+        plt.plot(list_ss, list_pa, linewidth=0.5, c='gray')
+    plt.xlabel('time "s"')
+    plt.ylabel('Value')
+    plt.title('Line Plot of Multiple Simulation', fontsize=15)
+    plt.tight_layout()
+    if whe_show:  # Whether to show the plot
+        plt.show()
+    fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')

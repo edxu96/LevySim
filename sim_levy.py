@@ -4,6 +4,7 @@
 
 import random
 import pandas as pd
+import numpy as np
 
 
 def cal(a_pre, m_pre, y, phi1, phi2):
@@ -50,3 +51,25 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     a_result = list_a[n_sample - 1]
     m_result = list_m[n_sample - 1]
     return df, p_result, a_result, m_result
+
+
+def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
+    # Calculate phi
+    phi1 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
+    phi2 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
+    #
+    list_p_result = [0] * n_sim
+    list_a_result = [0] * n_sim
+    list_m_result = [0] * n_sim
+    mat_s = np.zeros((n_sim, n_sample))
+    mat_p = np.zeros((n_sim, n_sample))
+    mat_a = np.zeros((n_sim, n_sample))
+    mat_m = np.zeros((n_sim, n_sample))
+    for i in range(n_sim):
+        df, list_p_result[i], list_a_result[i], list_m_result[i] = sim(n_sample, phi1, phi2, lamb, func_dist_y)
+        mat_s[i, :] = df.s
+        mat_p[i, :] = df.p
+        mat_a[i, :] = df.a
+        mat_m[i, :] = df.m
+    return list_p_result, list_a_result, list_m_result, mat_s, mat_p, mat_a, mat_m
+
