@@ -115,7 +115,7 @@ def line_fpp(list_a, list_prob, name_fig, whe_show=False):
     plt.plot(list_a, list_prob)
     plt.xlabel('a')
     plt.ylabel('Probability')
-    plt.title('Line Plot of a and First Passage Probability', fontsize=15)
+    plt.title('Line Plot of First Passage Probability under Different a', fontsize=15)
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')

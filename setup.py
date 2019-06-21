@@ -88,13 +88,14 @@ def task2():
     n_sim = 1000
     func_dist_y = select_dist(beta)
     # list_a = [10, 100, 1000, 10000, 100000, 1000000]
-    list_a = list(range(500, 10000, 100))
+    # list_a = list(range(500, 10000, 100))
+    list_a = list(range(2000, 4000, 100))
     n_a = len(list_a)
     list_prob = [0] * n_a
     print("n_a = {}".format(n_a))
     for i in range(n_a):
         list_prob[i] = cal_fpp(mu, sigma, lamb, func_dist_y, n_sample, n_sim, list_a[i])
-    vi.line_fpp(list_a, list_prob, '6')
+    vi.line_fpp(list_a, list_prob, '7')
 
 
 def main():
