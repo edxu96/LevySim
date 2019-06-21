@@ -159,19 +159,36 @@ def line_multi_pa(mat_s, mat_p, mat_a, name_fig, whe_show=False):
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
 
 
-def line_multi_pa_2(mat_s_1, mat_p_1, mat_a_1, mat_s_2, mat_p_2, mat_a_2, name_fig, whe_show=False):
-    n_sim = len(mat_p_1[:, 1])
+def get_list_color(n_set):
+    """
+    Get the list with enough number of colors
+    :param n_set:
+    :return:
+    """
+    list_color_raw = ['tomato', 'lightskyblue', 'wheat', 'limegreen', 'violet']
+    list_color = ['tomato', 'lightskyblue', 'wheat', 'limegreen', 'violet']
+    k = 2
+    while len(list_color) < n_set:
+        list_color = list_color_raw * k
+        k = k + 1
+    return list_color
+
+
+def line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, name_fig, whe_show=False):
+    n_set = len(list_mat_s)
+    n_sim = len(list_mat_p[1][:, 1])
     # if n_sim != len(mat_a_1[:, 1]):
     #     logging.error("len(mat_p[:, 1]) and len(mat_a[:, 1]) are not equal!")
     fig = plt.figure(figsize=(18, 8))
     plt.style.use("fivethirtyeight")
-    for i in range(n_sim):
-        list_ss_1, list_pa_1 = inter_pa(mat_s_1[i, :], mat_p_1[i, :], mat_a_1[i, :])
-        list_ss_2, list_pa_2 = inter_pa(mat_s_2[i, :], mat_p_2[i, :], mat_a_2[i, :])
-        plt.plot(list_ss_1, list_pa_1, linewidth=0.5, c='tomato')
-        plt.plot(list_ss_2, list_pa_2, linewidth=0.5, c='lightskyblue')
+    list_color = get_list_color(n_set)
+    # Plot the lines
+    for j in range(n_set):
+        for i in range(n_sim):
+            list_ss, list_pa = inter_pa(list_mat_s[j][i, :], list_mat_p[j][i, :], list_mat_a[j][i, :])
+            plt.plot(list_ss, list_pa, linewidth=0.5, c=list_color[j])
     plt.xlabel('time "s"')
-    plt.ylabel('Value')
+    plt.ylabel('P and A value of X')
     plt.title('Line Plot of Multiple Simulation from Different Parameters', fontsize=15)
     plt.tight_layout()
     if whe_show:  # Whether to show the plot

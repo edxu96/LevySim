@@ -108,15 +108,19 @@ def task3_2dim():
     n_sample = 1000
     n_sim = 100
     # Different beta s
-    beta_1 = 0.1
-    beta_2 = 1
-    func_dist_y_1 = select_dist(beta_1)
-    func_dist_y_2 = select_dist(beta_2)
-    # Simulation
-    _, _, _, mat_s_1, mat_p_1, mat_a_1, _ = sl.sim_multi(mu, sigma, lamb, func_dist_y_1, n_sample, n_sim)
-    _, _, _, mat_s_2, mat_p_2, mat_a_2, _ = sl.sim_multi(mu, sigma, lamb, func_dist_y_2, n_sample, n_sim)
+    list_beta = [0.01, 0.1, 1]
+    n_set = len(list_beta)
+    list_func_dist_y = [None] * n_set
+    list_mat_s = [None] * n_set
+    list_mat_p = [None] * n_set
+    list_mat_a = [None] * n_set
+    for i in range(n_set):
+        list_func_dist_y[i] = select_dist(list_beta[i])
+        # Simulation
+        _, _, _, list_mat_s[i], list_mat_p[i], list_mat_a[i], _ = sl.sim_multi(
+            mu, sigma, lamb, list_func_dist_y[i], n_sample, n_sim)
     # Plot the result
-    vi.line_multi_pa_2(mat_s_1, mat_p_1, mat_a_1, mat_s_2, mat_p_2, mat_a_2, '11')
+    vi.line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, '12')
 
 
 def main():
