@@ -112,9 +112,13 @@ def line_apm(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
 def line_fpp(list_a, list_prob, name_fig, whe_show=False):
     fig = plt.figure(figsize=(18, 8))
     plt.style.use("fivethirtyeight")
-    plt.plot(list_a, list_prob)
+    plt.plot(list_a, list_prob)  # , linestyle='--', marker='o'
     plt.xlabel('a')
     plt.ylabel('Probability')
+    plt.xticks(ticks=list_a, labels=list_a)
+    # plt.annotate(
+    #     'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
+    #     xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
     plt.title('Line Plot of First Passage Probability under Different a', fontsize=15)
     if whe_show:  # Whether to show the plot
         plt.show()
