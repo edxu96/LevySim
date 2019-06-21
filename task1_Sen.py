@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import numpy.random as npr
 import math
 
-nLoop = 1
-jump = 15
+nLoop = 10
+jump = 1000
 
 lambda1 = 1
-lambda2 = 5
+lambda2 = 1
 mu = 0.5
 sigma = 1
 phi1 = mu/(sigma**2) + math.sqrt(mu**2/sigma**4+2*lambda1/sigma**2)
