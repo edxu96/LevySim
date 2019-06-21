@@ -7,19 +7,20 @@ from matplotlib import pyplot as plt
 import logging
 
 
-def hist(list_result, num_bin, name_fig, whe_show=False):
+def hist(list_result, num_bin, str_var, name_fig, whe_show=False):
     array_density, array_edge = np.histogram(list_result, bins=num_bin, density=True)
     len_edge = array_edge[1] - array_edge[0]
     list_density = [i * len_edge for i in array_density.tolist()]
+    print("sum(list_density) = {} ;".format(sum(list_density)))
     list_position = array_edge[0: (len(array_edge) - 1)]
     list_position = [i + len_edge / 2 for i in list_position]
-    n_sample = len(list_result)
+    n_sim = len(list_result)
     fig = plt.figure(figsize=(18, 8))
     plt.style.use("fivethirtyeight")
     plt.plot(list_position, list_density)
     plt.xlabel('Class')
     plt.ylabel('Density')
-    plt.title('Histogram of Result from {} Simulations'.format(n_sample), fontsize=15)
+    plt.title('Histogram of {} from {} Simulations'.format(str_var, n_sim), fontsize=15)
     if whe_show:  # Whether to show the plot
         plt.show()
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')

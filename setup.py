@@ -19,9 +19,9 @@ def task1():
     mu = 1
     sigma = 1
     lamb = 1
-    n_sample = 100
+    n_sample = 1000
     func_dist_y = select_dist(lamb)
-    n_sim = 100
+    n_sim = 1000
     list_p_result = [0] * n_sim
     list_a_result = [0] * n_sim
     list_m_result = [0] * n_sim
@@ -30,9 +30,9 @@ def task1():
         list_p_result[i] = list_result[0]
         list_a_result[i] = list_result[1]
         list_m_result[i] = list_result[2]
-    vi.hist(list_p_result, 30, '1')
-    vi.hist(list_a_result, 30, '2')
-    vi.hist(list_m_result, 30, '3')
+    vi.hist(list_p_result, 30, 'p', '1')
+    vi.hist(list_a_result, 30, 'a', '2')
+    vi.hist(list_m_result, 30, 'm', '3')
     return list_p_result, list_a_result, list_m_result
 
 
@@ -50,7 +50,7 @@ def test():
     # print("m = {}".format(list_result[2]))
 
 
-test()
-# list_p_result, list_a_result, list_m_result = task1()
+# test()
+list_p_result, list_a_result, list_m_result = task1()
 
 
