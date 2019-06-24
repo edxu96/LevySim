@@ -8,7 +8,7 @@ import visualize as vi
 from functools import partial
 import time
 import logging
-# import scipy.stats as stats
+########################################################################################################################
 
 
 def select_dist(para):
@@ -89,7 +89,6 @@ def task2():
 def task3():
     """
     Plot the multiple simulation of a set of parameters
-    :return:
     """
     mu = 1  # mean = 1 / beta
     sigma = 1  # mean = 1 / beta
@@ -103,6 +102,9 @@ def task3():
 
 
 def check_len(list_list):
+    """
+    Check if the lengths of lists in the list_list are the same
+    """
     n_check = len(list_list)
     length = len(list_list[1])
     if sum([len(j) == length for j in list_list]) != n_check:

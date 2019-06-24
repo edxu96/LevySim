@@ -55,9 +55,9 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
 
 def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
     # Calculate phi
-    phi1 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    phi2 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    #
+    phi1 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
+    phi2 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
+    # Initialize lists
     list_p_result = [0] * n_sim
     list_a_result = [0] * n_sim
     list_m_result = [0] * n_sim
@@ -65,6 +65,7 @@ def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
     mat_p = np.zeros((n_sim, n_sample))
     mat_a = np.zeros((n_sim, n_sample))
     mat_m = np.zeros((n_sim, n_sample))
+    # Start simulation
     for i in range(n_sim):
         df, list_p_result[i], list_a_result[i], list_m_result[i] = sim(n_sample, phi1, phi2, lamb, func_dist_y)
         mat_s[i, :] = df.s

@@ -51,13 +51,6 @@ def hist(list_result, num_bin, str_var, name_fig, whe_show=False):
 def jump_pa(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     """
     Scatter plot of all the jumps
-    :param list_s:
-    :param list_p:
-    :param list_a:
-    :param list_m:
-    :param name_fig:
-    :param whe_show:
-    :return:
     """
     fig = plt.figure(figsize=(18, 8))
     # plt.xkcd()
