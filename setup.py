@@ -14,7 +14,15 @@ import logging
 def select_dist(para):
     func = partial(fd.exp, lbd=para)
     return func
-
+def select_dist_erlang(shape):
+    func = partial(fd.erlang, shape = shape)
+    return func
+def select_dist_hyperexpon(p1, lbd1, p2, lbd2):
+    func = partial(fd.hyperexp, p1 = p1, lbd1 = lbd1, p2 = p2, lbd2 = lbd2)
+    return func
+def select_dist_pareto(alpha, scale):
+    func = partial(fd.pareto, alpha = alpha, scale = scale)
+    return func
 
 def test():
     mu = 1
@@ -130,14 +138,28 @@ def task3_2dim():
     # Plot the result
     vi.line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, '13')
 
+def task4():
+    """
+    Plot the multiple simulation of a set of parameters
+    :return:
+    """
+    mu = 1  # mean = 1 / beta
+    sigma = 1  # mean = 1 / beta
+    lamb = 1  # mean = 1 / beta
+    n_sample = 1000
+    n_sim = 100
+    func_dist_y = [select_dist(1), select_dist_erlang(1), select_dist_hyperexpon(1, 0.5, 1, 0.5), select_dist_pareto(2, 0.5)]
+    for i in range(len(func_dist_y)):
+        _, _, _, mat_s, mat_p, mat_a, mat_m = sl.sim_multi(mu, sigma, lamb, func_dist_y[i], n_sample, n_sim)
+        vi.line_multi_pa(mat_s, mat_p, mat_a, 'task4' + str(i))
 
 def main():
     # test()
     # task1()
     # task2()
     # task3()
-    task3_2dim()
-
+    #task3_2dim()
+    task4()
 
 main()
 

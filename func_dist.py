@@ -3,7 +3,7 @@
 # date: 190620
 
 import scipy.stats as st
-
+import numpy as np
 
 def exp(lbd):
     """
@@ -12,7 +12,7 @@ def exp(lbd):
     :param lbd: parameter in desired exponential distribution, lamda = 1 / mean
     :return: generated value once
     """
-    return st.expon(scale=1 / lbd).rvs(size=1)
+    return st.expon(scale=1 /lbd).rvs(size=1)
 
 
 def erlang(shape):
@@ -34,18 +34,22 @@ def hyperexp(p1, lbd1, p2, lbd2):
            lamda1: the lambda value of type 1's exponential distribution
            p1: probability to choose type 2
            lamda1: the lambda value of type 2's exponential distribution
+           remind!!!!! scale can only be
            
     : return: generated value once
     """
-    return st.rv_discrete(values = ([st.expon.rvs(scale = 1/ lbd1), st.expon.rvs(scale = 1/ lbd2)],[p1,p2])).rvs(size = 1)
+
+    return np.random.choice(a = [st.expon.rvs(scale = 1/lbd1), st.expon.rvs(scale = 1/lbd2)],size = 1, p = [p1, 1-p1])
 
 
-def pareto(alpha):
+def pareto(alpha, scale):
     """
     Generate x from pareto distribution
         Built-in Python: pdf = f_{X}(x)=\left\{\begin{array}{ll}{\frac{\alpha x_{\mathrm{m}}^{\alpha}}{x^{\alpha+1}}} & {x \geq x_{\mathrm{m}}} \\ {0} & {x<x_{\mathrm{m}}}\end{array}\right.
+                    mean = b * scale
     :param alpha: alpha
+                    assume x_min^b = 1, use scale to assign different x_min
     :return: generated value once
     """
-    return st.pareto(b = alpha).rvs(size = 1)
+    return st.pareto(b = alpha, scale = scale).rvs(size = 1)
 
