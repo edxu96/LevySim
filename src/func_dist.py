@@ -18,7 +18,7 @@ def exp(lbd):
     """
     # mean = 1 / lbd
     # return st.expon(scale=mean).rvs(size=1)[0]
-    return random.expovariate(1 / lbd)
+    return random.expovariate(lbd)
 
 
 def erlang(shape):

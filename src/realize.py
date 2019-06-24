@@ -17,8 +17,8 @@ def update(a_pre, m_pre, y, phi1, phi2):
     """
     Update the value of v, w, p, a, m
     """
-    v = random.expovariate(1 / phi1)  # st.expon(scale=1 / phi1).rvs(size=1)[0]
-    w = random.expovariate(1 / phi2)  # st.expon(scale=1 / phi2).rvs(size=1)[0]
+    v = random.expovariate(phi1)  # st.expon(scale=1 / phi1).rvs(size=1)[0]
+    w = random.expovariate(phi2)  # st.expon(scale=1 / phi2).rvs(size=1)[0]
     p = a_pre + (v - w)
     a = a_pre + (v - w) + y
     m = max(m_pre, a_pre + v, a)
@@ -42,7 +42,7 @@ def single(n_sample, phi1, phi2, lbd, func_dist_y):
     list_y[0] = func_dist_y()
     # Being Simulation
     for i in range(1, n_sample):
-        list_inter[i] = random.expovariate(1 / lbd)  # st.expon(scale=1 / lbd).rvs(size=1)[0]
+        list_inter[i] = random.expovariate(lbd)  # st.expon(scale=1 / lbd).rvs(size=1)[0]
         list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = update(
