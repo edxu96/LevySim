@@ -4,6 +4,7 @@
 
 import scipy.stats as st
 import numpy as np
+import random
 
 ########################################################################################################################
 
@@ -15,8 +16,9 @@ def exp(lbd):
     :param lbd: parameter in desired exponential distribution, lamda = 1 / mean
     :return: generated value once
     """
-    mean = 1 / lbd
-    return st.expon(scale=mean).rvs(size=1)[0]
+    # mean = 1 / lbd
+    # return st.expon(scale=mean).rvs(size=1)[0]
+    return random.expovariate(1 / lbd)
 
 
 def erlang(shape):

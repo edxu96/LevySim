@@ -7,8 +7,8 @@
       <change beforePath="$PROJECT_DIR$/src/images/task41.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/task41.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/images/task42.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/task42.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/images/task43.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/task43.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realize.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/realize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualize.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +28,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/func_dist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="674">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="e#80#104#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+            <state relative-caret-position="240">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding>
                 <element signature="e#69#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/realize.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+              <folding>
+                <element signature="e#69#82#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,6 +95,7 @@
       <find>list_lamb</find>
       <find>list_prob</find>
       <find>lbd</find>
+      <find>random</find>
     </findStrings>
     <replaceStrings>
       <replace>lamb</replace>
@@ -113,10 +138,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
-        <option value="$PROJECT_DIR$/src/realize.py" />
         <option value="$PROJECT_DIR$/src/simulate.py" />
         <option value="$PROJECT_DIR$/src/visualize.py" />
         <option value="$PROJECT_DIR$/src/task.py" />
+        <option value="$PROJECT_DIR$/src/realize.py" />
         <option value="$PROJECT_DIR$/src/func_dist.py" />
       </list>
     </option>
@@ -195,12 +220,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561029986746</updated>
       <workItem from="1561029990753" duration="29508000" />
-      <workItem from="1561367052707" duration="11855000" />
+      <workItem from="1561367052707" duration="12395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41363000" />
+    <option name="totallyTimeSpent" value="41903000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -213,6 +238,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07939914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -313,37 +339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/simulate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/realize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="83" column="99" selection-start-line="83" selection-start-column="96" selection-end-line="83" selection-end-column="99" />
-          <folding>
-            <element signature="e#69#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/func_dist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="111" selection-start-line="45" selection-start-column="111" selection-end-line="45" selection-end-column="111" />
-          <folding>
-            <element signature="e#80#104#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -354,12 +353,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+        <state relative-caret-position="240">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding>
             <element signature="e#69#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding>
+            <element signature="e#69#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/func_dist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#80#104#0" expanded="true" />
           </folding>
         </state>
       </provider>

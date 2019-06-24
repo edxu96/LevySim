@@ -17,7 +17,7 @@ def do1():
     n_sample = 1000
     n_sim = 1000
     func_dist_y = simulate.select_dist(beta)
-    list_p_result, list_a_result, list_m_result, _, _, _, _ = realize.multi(
+    list_p_result, list_a_result, list_m_result, _, _, _, _, _ = realize.multi(
         mu, sigma, lbd, func_dist_y, n_sample, n_sim)
     vi.hist(list_p_result, 30, 'p', '1')
     vi.hist(list_a_result, 30, 'a', '2')
@@ -55,7 +55,7 @@ def do4():
     Plot the multiple simulation on different Y distribution
     :return:
     """
-    mu = 100
+    mu = 0.1
     sigma = 1
     lbd = 1
     n_sample = 1000
