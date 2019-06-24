@@ -16,7 +16,7 @@ def cal(a_pre, m_pre, y, phi1, phi2):
     return v, w, p, a, m
 
 
-def sim(n_sample, phi1, phi2, lamb, func_dist_y):
+def single(n_sample, phi1, phi2, lbd, func_dist_y):
     # Pre-assign lists
     list_v = [0] * n_sample
     list_w = [0] * n_sample
@@ -33,7 +33,7 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     list_m[0] = 0
     # Being Simulation
     for i in range(1, n_sample):
-        list_inter[i] = random.expovariate(lamb)
+        list_inter[i] = random.expovariate(lbd)
         list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(
@@ -55,7 +55,7 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     return df, p_result, a_result, m_result
 
 
-def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
+def multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
     # Calculate phi
     phi1 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
     phi2 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
@@ -69,7 +69,7 @@ def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
     mat_m = np.zeros((n_sim, n_sample))
     # Start simulation
     for i in range(n_sim):
-        df, list_p_result[i], list_a_result[i], list_m_result[i] = sim(n_sample, phi1, phi2, lamb, func_dist_y)
+        df, list_p_result[i], list_a_result[i], list_m_result[i] = single(n_sample, phi1, phi2, lamb, func_dist_y)
         mat_s[i, :] = df.s
         mat_p[i, :] = df.p
         mat_a[i, :] = df.a
