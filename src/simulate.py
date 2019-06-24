@@ -16,6 +16,21 @@ def select_dist(para):
     return func
 
 
+def select_dist_erlang(shape):
+    func = partial(fd.erlang, shape = shape)
+    return func
+
+
+def select_dist_hyperexpon(p1, lbd1, p2, lbd2):
+    func = partial(fd.hyperexp, p1 = p1, lbd1 = lbd1, p2 = p2, lbd2 = lbd2)
+    return func
+
+
+def select_dist_pareto(alpha, scale):
+    func = partial(fd.pareto, alpha = alpha, scale = scale)
+    return func
+
+
 def single():
     """
     Plot the multiple simulation of a set of parameters

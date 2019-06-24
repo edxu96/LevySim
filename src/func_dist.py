@@ -1,9 +1,10 @@
 # setup File for Levy Process
-# author: Edward J. Xu
+# author: Edward J. Xu, Aijie Shu
 # date: 190620
 
 import scipy.stats as st
 import numpy as np
+
 
 def exp(lbd):
     """
@@ -15,11 +16,11 @@ def exp(lbd):
     return st.expon(scale=1 / lbd).rvs(size=1)[0]
 
 
-
 def erlang(shape):
     """
     Generate x from exponential distribution
-        Built-in Python: pdf = f(x ; k, \mu) =\frac{x^{k-1} e^{-\frac{x}{\mu}}}{\mu^{k}(k-1) !} \quad \text { for } x, \mu \geq 0
+        Built-in Python: pdf = f(x ; k, \mu) =\frac{x^{k-1} e^{-\frac{x}{\mu}}}{\mu^{k}(k-1) !} \quad
+        \text { for } x, \mu \geq 0
     :param shape: when shape parameter k equals one, it simplifies to the exponential distribution.
     :return: generated value once
     """
@@ -39,15 +40,16 @@ def hyperexp(p1, lbd1, p2, lbd2):
            
     : return: generated value once
     """
-    return np.random.choice(a = [st.expon.rvs(scale = 1/lbd1), st.expon.rvs(scale = 1/lbd2)],size = 1, p = [p1, 1-p1])
-
+    return np.random.choice(a=[st.expon.rvs(scale=1/lbd1), st.expon.rvs(scale=1/lbd2)], size=1, p=[p1, 1-p1])
 
 
 def pareto(alpha, scale):
     """
     Generate x from pareto distribution
         Built-in Python: pdf = f_{X}(x)=\left\{\begin{array}{ll}{\frac{\alpha x_{\mathrm{m}}^{\alpha}}{x^{\alpha+1}}} &
-                               {x \geq x_{\mathrm{m}}} \\ {0} & {x<x_{\mathrm{m}}}\end{array}\right.
+        {x \geq x_{\mathrm{m}}} \\ {0} & {x<x_{\mathrm{m}}}\end{array}\right.
 	"""
     return st.pareto(b = alpha, scale = scale).rvs(size = 1)
+
+
 
