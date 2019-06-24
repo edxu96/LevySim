@@ -11,8 +11,8 @@ def exp(lbd):
         Built-in Python: pdf = lambda * exp(-lambda * x)
     :param lbd: parameter in desired exponential distribution, lamda = 1 / mean
     :return: generated value once
-    """
-    return st.expon(scale=1 / lbd).rvs(size=1)
+    """ 
+    return st.expon(scale=1 / lbd).rvs(size=1)[0]
 
 
 def erlang(shape):

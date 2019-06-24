@@ -9,10 +9,10 @@ import simulate
 
 
 def main():
-    # simulate.test()
+    # task.test()
     # task.do1()
-    task.do3()
-    # task.do5('13')
+    # task.do3()
+    task.do5()
 
 
 main()

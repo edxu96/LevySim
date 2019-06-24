@@ -1,4 +1,6 @@
-
+# setup File for Levy Process
+# author: Edward J. Xu
+# date: 190624
 
 import realize
 import simulate
@@ -48,13 +50,24 @@ def do3():
     simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, '6')
 
 
-def do5(name_fig):
-    # list_a = [10, 100, 1000, 10000, 100000, 1000000]
-    # list_a = list(range(500, 10000, 100))
-    # list_a = list(range(2000, 4000, 100))
-    list_a = list(range(2750, 3250, 50))
-    list_prob = simulate.fpp_multi(list_a)
-    vi.line_fpp_multi(list_a, list_prob, name_fig)
+def do5():
+    # Set Parameters
+    mu = 1
+    sigma = 1
+    lbd = 1
+    beta = 1  # [beta in distribution of y], mean = 1 / beta
+    func_dist_y = simulate.select_dist(beta)
+    n_sample = 10
+    n_sim = 1
+    # Set list of a
+    # list_a = [1, 10, 1000, 100000]
+    # list_a = list(range(2750, 3250, 50))
+    list_a = [1]
+    # Being Simulation
+    list_fpp = simulate.fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a)
+    print(list_a)
+    print(list_fpp)
+    vi.line_fpp_multi(list_a, list_fpp, '7')
 
 
 def test():
