@@ -39,14 +39,12 @@ def single(n_sample, phi1, phi2, lbd, func_dist_y):
     list_inter = [0] * n_sample
     # Initialization
     list_y[0] = func_dist_y()
-    list_p[0] = 0
-    list_a[0] = 0
-    list_m[0] = 0
     # Being Simulation
     for i in range(1, n_sample):
         list_inter[i] = random.expovariate(lbd)
         list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
+        print(list_y[i])
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = update(
             list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
     # Store all the result in dataframe
@@ -60,13 +58,14 @@ def single(n_sample, phi1, phi2, lbd, func_dist_y):
         's': list_s,
         'inter': list_inter
     })
-    p_result = list_p[n_sample - 1]
-    a_result = list_a[n_sample - 1]
-    m_result = list_m[n_sample - 1]
+    p_result = list_p[-1]
+    a_result = list_a[-1]
+    m_result = list_m[-1]
+    print(m_result)
     return df, p_result, a_result, m_result
 
 
-def multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, a=True):
+def multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, a=False):
     """
     Do multiple simulation using same set of parameters, and calculate the first passage probability
     """
@@ -92,7 +91,7 @@ def multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, a=True):
     time_elapse = time.time() - time_start
     print("Time elapsed = {} ;".format(time_elapse))
     # Calculate first passage probability given a of sim.multi
-    if a:
+    if not a:
         fpp = None
     elif isinstance(a, Number):
         fpp = sum([i > a for i in list_m_result]) / len(list_m_result)

@@ -60,24 +60,18 @@ def multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, str_fig):
     vi.line_simulate_multi(list_mat_s, list_mat_p, list_mat_a, str_fig)
 
 
-def fpp_multi(list_a):
+def fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a):
     """
     Calculate several first passage probability of multiple simulation
     """
-    mu = 1
-    sigma = 1
-    lbd = 1
-    beta = 1  # [beta in distribution of y], mean = 1 / beta
-    n_sample = 1000
-    n_sim = 1000
-    func_dist_y = select_dist(beta)
+    print("--------------------------------------------------------------------------------\n"
+          "Calculate First Passage Probabilities of Different a")
     n_a = len(list_a)
-    list_prob = [0] * n_a
-    print("n_a = {}".format(n_a))
+    list_fpp = [0] * n_a
+    print("    n_a = {}".format(n_a))
     for i in range(n_a):
-        list_prob[i] = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a[i])
-    return list_prob
-    # vi.line_fpp(list_a, list_prob, '8')
+        _, _, _, _, _, _, _, list_fpp[i] = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a[i])
+    return list_fpp
 
 
 
