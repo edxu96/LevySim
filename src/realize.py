@@ -44,7 +44,6 @@ def single(n_sample, phi1, phi2, lbd, func_dist_y):
         list_inter[i] = random.expovariate(lbd)
         list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
-        print(list_y[i])
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = update(
             list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
     # Store all the result in dataframe
@@ -61,7 +60,6 @@ def single(n_sample, phi1, phi2, lbd, func_dist_y):
     p_result = list_p[-1]
     a_result = list_a[-1]
     m_result = list_m[-1]
-    print(m_result)
     return df, p_result, a_result, m_result
 
 

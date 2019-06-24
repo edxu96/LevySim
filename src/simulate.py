@@ -42,7 +42,7 @@ def single():
     n_sample = 1000
     n_sim = 100
     func_dist_y = select_dist(beta)
-    _, _, _, mat_s, mat_p, mat_a, mat_m = realize.multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
+    _, _, _, mat_s, mat_p, mat_a, mat_m, _ = realize.multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim)
     vi.line_multi_pa(mat_s, mat_p, mat_a, '10')
     
     

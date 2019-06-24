@@ -58,11 +58,12 @@ def do4():
     mu = 1  # mean = 1 / beta
     sigma = 1  # mean = 1 / beta
     lamb = 1  # mean = 1 / beta
-    n_sample = 1000
-    n_sim = 100
-    func_dist_y = [select_dist(1), select_dist_erlang(1), select_dist_hyperexpon(1, 0.5, 1, 0.5), select_dist_pareto(2, 0.5)]
+    n_sample = 100
+    n_sim = 10
+    func_dist_y = [simulate.select_dist(1), simulate.select_dist_erlang(1),
+                   simulate.select_dist_hyperexpon(1, 0.5, 1, 0.5), simulate.select_dist_pareto(2, 0.5)]
     for i in range(len(func_dist_y)):
-        _, _, _, mat_s, mat_p, mat_a, mat_m = sl.sim_multi(mu, sigma, lamb, func_dist_y[i], n_sample, n_sim)
+        _, _, _, mat_s, mat_p, mat_a, mat_m, _ = realize.multi(mu, sigma, lamb, func_dist_y[i], n_sample, n_sim)
         vi.line_multi_pa(mat_s, mat_p, mat_a, 'task4' + str(i))
 
         
