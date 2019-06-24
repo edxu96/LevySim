@@ -143,9 +143,9 @@ def line_multi_pa(mat_s, mat_p, mat_a, name_fig, whe_show=False):
     for i in range(n_sim):
         list_ss, list_pa = inter_pa(mat_s[i, :], mat_p[i, :], mat_a[i, :])
         plt.plot(list_ss, list_pa, linewidth=0.5, c='gray')
-    plt.xlabel('time "s"')
-    plt.ylabel('Value')
-    plt.title('Line Plot of Multiple Simulation', fontsize=15)
+    plt.xlabel('arrival time')
+    plt.ylabel('value of X prior to and after jump')
+    plt.title('Line Plot of Multiple Realization', fontsize=15)
     plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()

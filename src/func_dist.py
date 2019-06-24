@@ -5,6 +5,8 @@
 import scipy.stats as st
 import numpy as np
 
+########################################################################################################################
+
 
 def exp(lbd):
     """
@@ -13,7 +15,8 @@ def exp(lbd):
     :param lbd: parameter in desired exponential distribution, lamda = 1 / mean
     :return: generated value once
     """
-    return st.expon(scale=1 / lbd).rvs(size=1)[0]
+    mean = 1 / lbd
+    return st.expon(scale=mean).rvs(size=1)[0]
 
 
 def erlang(shape):
@@ -24,7 +27,7 @@ def erlang(shape):
     :param shape: when shape parameter k equals one, it simplifies to the exponential distribution.
     :return: generated value once
     """
-    return st.erlang(shape).rvs(size=1)
+    return st.erlang(shape).rvs(size=1)[0]
 
 
 def hyperexp(p1, lbd1, p2, lbd2):
@@ -40,7 +43,7 @@ def hyperexp(p1, lbd1, p2, lbd2):
            
     : return: generated value once
     """
-    return np.random.choice(a=[st.expon.rvs(scale=1/lbd1), st.expon.rvs(scale=1/lbd2)], size=1, p=[p1, 1-p1])
+    return np.random.choice(a=[st.expon.rvs(scale=1/lbd1), st.expon.rvs(scale=1/lbd2)], size=1, p=[p1, 1-p1])[0]
 
 
 def pareto(alpha, scale):
@@ -49,7 +52,7 @@ def pareto(alpha, scale):
         Built-in Python: pdf = f_{X}(x)=\left\{\begin{array}{ll}{\frac{\alpha x_{\mathrm{m}}^{\alpha}}{x^{\alpha+1}}} &
         {x \geq x_{\mathrm{m}}} \\ {0} & {x<x_{\mathrm{m}}}\end{array}\right.
 	"""
-    return st.pareto(b = alpha, scale = scale).rvs(size = 1)
+    return st.pareto(b = alpha, scale = scale).rvs(size = 1)[0]
 
 
 

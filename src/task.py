@@ -55,15 +55,15 @@ def do4():
     Plot the multiple simulation on different Y distribution
     :return:
     """
-    mu = 1  # mean = 1 / beta
-    sigma = 1  # mean = 1 / beta
-    lamb = 1  # mean = 1 / beta
+    mu = 100
+    sigma = 1
+    lbd = 1
     n_sample = 1000
-    n_sim = 100
+    n_sim = 10
     func_dist_y = [simulate.select_dist(1), simulate.select_dist_erlang(1),
                    simulate.select_dist_hyperexpon(1, 0.5, 1, 0.5), simulate.select_dist_pareto(2, 0.5)]
     for i in range(len(func_dist_y)):
-        _, _, _, mat_s, mat_p, mat_a, mat_m, _ = realize.multi(mu, sigma, lamb, func_dist_y[i], n_sample, n_sim)
+        _, _, _, mat_s, mat_p, mat_a, mat_m, _ = realize.multi(mu, sigma, lbd, func_dist_y[i], n_sample, n_sim)
         vi.line_multi_pa(mat_s, mat_p, mat_a, 'task4' + str(i))
 
         
