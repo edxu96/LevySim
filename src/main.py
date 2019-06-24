@@ -3,17 +3,16 @@
 # date: 190624
 
 import task
+import simulate
 
 ########################################################################################################################
 
 
 def main():
-    # task.test()
-    # task.task1()
-    # task.task2()
-    # task.multi()
-    task.do1()
-    task.do5('13')
+    # simulate.test()
+    # task.do1()
+    task.do3()
+    # task.do5('13')
 
 
 main()

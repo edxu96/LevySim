@@ -183,7 +183,7 @@ def line_simulate_multi(list_mat_s, list_mat_p, list_mat_a, name_fig, whe_show=F
             plt.plot(list_ss, list_pa, linewidth=0.5, c=list_color[j])
     plt.xlabel('arrival time')
     plt.ylabel('value of X prior to and after jump')
-    plt.title('Line Plot of Simulations with Different Parameters', fontsize=15)
+    plt.title('Line Plot of Simulations with Different Sets of Parameters', fontsize=15)
     plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()

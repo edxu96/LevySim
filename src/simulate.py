@@ -16,22 +16,6 @@ def select_dist(para):
     return func
 
 
-def test():
-    mu = 1
-    sigma = 1
-    n_sample = 100
-    lbd = 1
-    beta = 1  # [beta in distribution of y],
-    func_dist_y = select_dist(beta)
-    df, list_result = realize.single(n_sample, mu, sigma, lbd, func_dist_y)
-    # Visualize and print the result
-    vi.jump_pa(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='4')
-    vi.line_pam(list_s=df.s, list_p=df.p, list_a=df.a, list_m=df.m, name_fig='5')
-    print("p = {}".format(list_result[0]))
-    print("a = {}".format(list_result[1]))
-    print("m = {}".format(list_result[2]))
-
-
 def single():
     """
     Plot the multiple simulation of a set of parameters
@@ -55,29 +39,23 @@ def check_len(list_list):
     length = len(list_list[1])
     if sum([len(j) == length for j in list_list]) != n_check:
         logging.error("Length of lists of parameters are not equal!")
+        quit()
 
 
-def multi(str_fig):
+def multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, str_fig):
     """
     Combine simulation result of different sets of parameters
     """
-    n_sample = 100
-    n_sim = 10
-    # Different beta s
-    list_beta = [0.01, 0.1, 1]
-    list_mu = [1, 1, 1]
-    list_sigma = [1, 1, 1]
-    list_lamb = [1, 1, 1]
     n_set = len(list_beta)
-    check_len([list_beta, list_mu, list_sigma, list_lamb])
+    check_len([list_beta, list_mu, list_sigma, list_lbd])
     # Initialize the lists for result
     list_mat_s = [None] * n_set
     list_mat_p = [None] * n_set
     list_mat_a = [None] * n_set
     # Being Simulation
     for i in range(n_set):
-        _, _, _, list_mat_s[i], list_mat_p[i], list_mat_a[i], _ = realize.multi(
-            list_mu[i], list_sigma[i], list_lamb[i], select_dist(list_beta[i]), n_sample, n_sim)
+        _, _, _, list_mat_s[i], list_mat_p[i], list_mat_a[i], _, _ = realize.multi(
+            list_mu[i], list_sigma[i], list_lbd[i], select_dist(list_beta[i]), n_sample, n_sim)
     # Plot the result
     vi.line_simulate_multi(list_mat_s, list_mat_p, list_mat_a, str_fig)
 

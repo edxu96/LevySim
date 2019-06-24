@@ -84,7 +84,7 @@ def multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, a=True):
     # Start simulation
     time_start = time.time()
     for i in range(n_sim):
-        df, list_p_result[i], list_a_result[i], list_m_result[i] = realize(n_sample, phi1, phi2, lbd, func_dist_y)
+        df, list_p_result[i], list_a_result[i], list_m_result[i] = single(n_sample, phi1, phi2, lbd, func_dist_y)
         mat_s[i, :] = df.s
         mat_p[i, :] = df.p
         mat_a[i, :] = df.a
