@@ -106,3 +106,4 @@ levy.pdf
 
 # Pycharm
 .idea
+*.xml
