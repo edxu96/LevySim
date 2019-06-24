@@ -28,29 +28,26 @@ def do1():
 
 
 def do3():
-    n_sample = 100
-    n_sim = 10
-    # Different beta s
+    n_sample = 1000
+    n_sim = 100
+    # Different mu
     list_beta = [1, 1, 1]
-    list_mu = [1, 10, 100]
+    list_mu = [-10, 1, 10]
     list_sigma = [1, 1, 1]
     list_lbd = [1, 1, 1]
-    # Begin Simulation
-    simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, 'task3-1')
+    simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, 'task3-mu')
     # Different sigma
-    list_beta = [1, 1, 1]
-    list_mu = [1, 1, 1]
-    list_sigma = [0.1, 1, 10]
-    list_lbd = [1, 1, 1]
-    # Begin Simulation
-    simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, 'task3-2')
+    # list_beta = [1, 1, 1]
+    # list_mu = [1, 1, 1]
+    # list_sigma = [0.1, 1, 1000]
+    # list_lbd = [1, 1, 1]
+    # simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, 'task3-sigma')
     # Different lambda
-    list_beta = [1, 1, 1]
-    list_mu = [1, 1, 1]
-    list_sigma = [1, 1, 1]
-    list_lbd = [0.1, 1, 10]
-    # Begin Simulation
-    simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, 'task3-3')
+    # list_beta = [1, 1, 1]
+    # list_mu = [1, 1, 1]
+    # list_sigma = [1, 1, 1]
+    # list_lbd = [0.1, 1, 10]
+    # simulate.multi(n_sample, n_sim, list_beta, list_mu, list_sigma, list_lbd, 'task3-lbd')
 
     
 def do4():
