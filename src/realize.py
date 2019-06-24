@@ -5,9 +5,17 @@
 import random
 import pandas as pd
 import numpy as np
+import time
+from numbers import Number
+import logging
+
+########################################################################################################################
 
 
-def cal(a_pre, m_pre, y, phi1, phi2):
+def update(a_pre, m_pre, y, phi1, phi2):
+    """
+    Update the value of v, w, p, a, m
+    """
     v = random.expovariate(1 / phi1)
     w = random.expovariate(1 / phi2)
     p = a_pre + (v - w)
@@ -16,7 +24,10 @@ def cal(a_pre, m_pre, y, phi1, phi2):
     return v, w, p, a, m
 
 
-def sim(n_sample, phi1, phi2, lamb, func_dist_y):
+def single(n_sample, phi1, phi2, lbd, func_dist_y):
+    """
+    Do simulation using same set of parameters
+    """
     # Pre-assign lists
     list_v = [0] * n_sample
     list_w = [0] * n_sample
@@ -31,12 +42,14 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     list_p[0] = 0
     list_a[0] = 0
     list_m[0] = 0
+    # Being Simulation
     for i in range(1, n_sample):
-        list_inter[i] = random.expovariate(lamb)
+        list_inter[i] = random.expovariate(lbd)
         list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
-        list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(
+        list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = update(
             list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
+    # Store all the result in dataframe
     df = pd.DataFrame({
         'v': list_v,
         'w': list_w,
@@ -53,11 +66,14 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     return df, p_result, a_result, m_result
 
 
-def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
+def multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, a=True):
+    """
+    Do multiple simulation using same set of parameters, and calculate the first passage probability
+    """
     # Calculate phi
-    phi1 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    phi2 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lamb / sigma ** 2)
-    #
+    phi1 = - mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lbd / sigma ** 2)
+    phi2 = mu / sigma ** 2 + np.sqrt(mu ** 2 / sigma ** 4 + 2 * lbd / sigma ** 2)
+    # Initialize lists
     list_p_result = [0] * n_sim
     list_a_result = [0] * n_sim
     list_m_result = [0] * n_sim
@@ -65,11 +81,24 @@ def sim_multi(mu, sigma, lamb, func_dist_y, n_sample, n_sim):
     mat_p = np.zeros((n_sim, n_sample))
     mat_a = np.zeros((n_sim, n_sample))
     mat_m = np.zeros((n_sim, n_sample))
+    # Start simulation
+    time_start = time.time()
     for i in range(n_sim):
-        df, list_p_result[i], list_a_result[i], list_m_result[i] = sim(n_sample, phi1, phi2, lamb, func_dist_y)
+        df, list_p_result[i], list_a_result[i], list_m_result[i] = single(n_sample, phi1, phi2, lbd, func_dist_y)
         mat_s[i, :] = df.s
         mat_p[i, :] = df.p
         mat_a[i, :] = df.a
         mat_m[i, :] = df.m
-    return list_p_result, list_a_result, list_m_result, mat_s, mat_p, mat_a, mat_m
+    time_elapse = time.time() - time_start
+    print("Time elapsed = {} ;".format(time_elapse))
+    # Calculate first passage probability given a of sim.multi
+    if a:
+        fpp = None
+    elif isinstance(a, Number):
+        fpp = sum([i > a for i in list_m_result]) / len(list_m_result)
+    else:
+        logging.error("Wrong `a` input!")
+        fpp = None
+    return list_p_result, list_a_result, list_m_result, mat_s, mat_p, mat_a, mat_m, fpp
+
 

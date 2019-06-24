@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85980bcf-f45c-4f1e-8db0-d5a4ab68899c" name="Default Changelist" comment="" />
+    <list default="true" id="85980bcf-f45c-4f1e-8db0-d5a4ab68899c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/images/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/realize.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/realize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,36 +17,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+              <folding>
+                <element signature="e#69#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simulate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/setup.py">
+        <entry file="file://$PROJECT_DIR$/src/realize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="122" column="31" lean-forward="true" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
+            <state relative-caret-position="338">
+              <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
               <folding>
-                <element signature="e#69#90#0" expanded="true" />
+                <element signature="e#69#82#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/visualize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="167" column="53" lean-forward="true" selection-start-line="167" selection-start-column="53" selection-end-line="167" selection-end-column="53" />
-              <folding>
-                <element signature="e#69#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/func_dist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -61,13 +69,18 @@
       <find>vec_para</find>
       <find>func_sim_dist</find>
       <find>list_t</find>
-      <find>lamb</find>
       <find>sigma</find>
-      <find>select_dist</find>
       <find>sim_multi</find>
       <find>line_apm</find>
       <find>list_result</find>
       <find>jump_ap</find>
+      <find>sim.</find>
+      <find>lamb</find>
+      <find>fpp</find>
+      <find>sim.realize</find>
+      <find>sim.multi</find>
+      <find>select_dist</find>
+      <find>list_lamb</find>
     </findStrings>
     <replaceStrings>
       <replace>lamb</replace>
@@ -79,6 +92,12 @@
       <replace>line_pam</replace>
       <replace>sl.sim_multi</replace>
       <replace>jump_pa</replace>
+      <replace>sim</replace>
+      <replace>multi</replace>
+      <replace>lbd</replace>
+      <replace>realize.single</replace>
+      <replace>realize.multi</replace>
+      <replace>list_lbd</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -93,10 +112,19 @@
         <option value="$PROJECT_DIR$/FuncDist.py" />
         <option value="$PROJECT_DIR$/simlevy.py" />
         <option value="$PROJECT_DIR$/plot.py" />
+        <option value="$PROJECT_DIR$/visualize.py" />
         <option value="$PROJECT_DIR$/sim_levy.py" />
         <option value="$PROJECT_DIR$/func_dist.py" />
-        <option value="$PROJECT_DIR$/visualize.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/src/sim_levy.py" />
+        <option value="$PROJECT_DIR$/src/visualize.py" />
+        <option value="$PROJECT_DIR$/src/sim.py" />
+        <option value="$PROJECT_DIR$/task.py" />
+        <option value="$PROJECT_DIR$/src/realize.py" />
+        <option value="$PROJECT_DIR$/src/task.py" />
+        <option value="$PROJECT_DIR$/src/main.py" />
+        <option value="$PROJECT_DIR$/src/simulate.py" />
       </list>
     </option>
   </component>
@@ -112,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -119,11 +148,15 @@
               <item name="LevyProcess" type="b2602c69:ProjectViewProjectNode" />
               <item name="LevyProcess" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="LevyProcess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LevyProcess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -131,7 +164,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -140,6 +173,11 @@
         <option name="myModuleName" value="LevyProcess" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -164,11 +202,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561029986746</updated>
       <workItem from="1561029990753" duration="29508000" />
+      <workItem from="1561367052707" duration="6598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29508000" />
+    <option name="totallyTimeSpent" value="36106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -180,12 +219,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.041533545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06366237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" />
@@ -202,28 +241,52 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="5" sideWeight="0.4970297" visible="true" weight="0.1512247" />
+      <window_info active="true" anchor="right" id="Terminal" order="5" sideWeight="0.4970297" visible="true" weight="0.2639485" />
       <window_info anchor="right" id="Python Console" order="6" sideWeight="0.5029703" side_tool="true" weight="0.22417465" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06366237" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32970297" />
+      <window_info anchor="right" id="SciView" order="0" sideWeight="0.49879518" weight="0.3297568" />
+      <window_info anchor="right" id="Database" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="right" id="Terminal" order="5" sideWeight="0.4970297" visible="true" weight="0.36266094" />
+      <window_info anchor="right" id="Python Console" order="6" sideWeight="0.5029703" side_tool="true" weight="0.22417465" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/functions/SimLevy.py">
+    <entry file="file://$PROJECT_DIR$/functions/SimLevy.py" />
+    <entry file="file://$PROJECT_DIR$/visualize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="2372">
+          <caret line="177" column="38" lean-forward="true" selection-start-line="177" selection-start-column="38" selection-end-line="177" selection-end-column="38" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#69#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sim_levy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1049">
-          <caret line="73" column="63" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
+        <state relative-caret-position="760">
+          <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding>
             <element signature="e#69#82#0" expanded="true" />
           </folding>
@@ -232,27 +295,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/func_dist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="-34">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visualize.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="167" column="53" lean-forward="true" selection-start-line="167" selection-start-column="53" selection-end-line="167" selection-end-column="53" />
+        <state relative-caret-position="133">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visualize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1270">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
-            <element signature="e#69#87#0" expanded="true" />
+            <element signature="e#69#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
+    <entry file="file://$PROJECT_DIR$/src/task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="122" column="31" lean-forward="true" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
+        <state relative-caret-position="198">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
           <folding>
-            <element signature="e#69#90#0" expanded="true" />
+            <element signature="e#2#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/realize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+          <folding>
+            <element signature="e#69#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
