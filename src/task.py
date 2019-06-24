@@ -1,6 +1,6 @@
 # setup File for Levy Process
 # author: Edward J. Xu
-# date: 190620
+# date: 190624
 
 import sim_levy as sl
 import func_dist as fd
@@ -131,16 +131,3 @@ def task3_2dim():
             list_mu[i], list_sigma[i], list_lamb[i], select_dist(list_beta[i]), n_sample, n_sim)
     # Plot the result
     vi.line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, '13')
-
-
-def main():
-    # test()
-    # task1()
-    # task2()
-    # task3()
-    task3_2dim()
-
-
-main()
-
-

@@ -31,12 +31,14 @@ def sim(n_sample, phi1, phi2, lamb, func_dist_y):
     list_p[0] = 0
     list_a[0] = 0
     list_m[0] = 0
+    # Being Simulation
     for i in range(1, n_sample):
         list_inter[i] = random.expovariate(lamb)
         list_s[i] = list_s[i - 1] + list_inter[i]
         list_y[i] = func_dist_y()
         list_v[i], list_w[i], list_p[i], list_a[i], list_m[i] = cal(
             list_a[i - 1], list_m[i - 1], list_y[i], phi1, phi2)
+    # Store all the result in dataframe
     df = pd.DataFrame({
         'v': list_v,
         'w': list_w,
