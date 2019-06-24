@@ -117,7 +117,7 @@ def line_pam(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
 
 
-def line_fpp(list_a, list_prob, name_fig, whe_show=False):
+def line_fpp_multi(list_a, list_prob, name_fig, whe_show=False):
     fig = plt.figure(figsize=(18, 8))
     plt.style.use("fivethirtyeight")
     plt.plot(list_a, list_prob)  # , linestyle='--', marker='o'
@@ -168,7 +168,7 @@ def get_list_color(n_set):
     return list_color
 
 
-def line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, name_fig, whe_show=False):
+def line_simulate_multi(list_mat_s, list_mat_p, list_mat_a, name_fig, whe_show=False):
     n_set = len(list_mat_s)
     n_sim = len(list_mat_p[1][:, 1])
     # if n_sim != len(mat_a_1[:, 1]):
@@ -181,9 +181,9 @@ def line_multi_pa_multi(list_mat_s, list_mat_p, list_mat_a, name_fig, whe_show=F
         for i in range(n_sim):
             list_ss, list_pa = inter_pa(list_mat_s[j][i, :], list_mat_p[j][i, :], list_mat_a[j][i, :])
             plt.plot(list_ss, list_pa, linewidth=0.5, c=list_color[j])
-    plt.xlabel('time "s"')
-    plt.ylabel('P and A value of X')
-    plt.title('Line Plot of Multiple Simulation from Different Parameters', fontsize=15)
+    plt.xlabel('arrival time')
+    plt.ylabel('value of X prior to and after jump')
+    plt.title('Line Plot of Simulations with Different Parameters', fontsize=15)
     plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()

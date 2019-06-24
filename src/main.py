@@ -3,15 +3,17 @@
 # date: 190624
 
 import task
+
 ########################################################################################################################
 
 
 def main():
-    task.test()
+    # task.test()
     # task.task1()
     # task.task2()
-    # task.task3()
-    # task.task3_2dim()
+    # task.multi()
+    task.do1()
+    task.do5('13')
 
 
 main()

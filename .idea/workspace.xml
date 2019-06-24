@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85980bcf-f45c-4f1e-8db0-d5a4ab68899c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/sim_levy.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/realize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualize.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,22 +18,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sim.py">
+        <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/task.py">
+        <entry file="file://$PROJECT_DIR$/task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-445">
-              <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+            <state>
+              <caret column="120" lean-forward="true" selection-start-column="120" selection-end-column="120" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simulate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="596">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#69#90#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/realize.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+              <folding>
+                <element signature="e#69#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/visualize.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
@@ -52,13 +86,17 @@
       <find>vec_para</find>
       <find>func_sim_dist</find>
       <find>list_t</find>
-      <find>lamb</find>
       <find>sigma</find>
       <find>select_dist</find>
       <find>sim_multi</find>
       <find>line_apm</find>
       <find>list_result</find>
       <find>jump_ap</find>
+      <find>sim.</find>
+      <find>lamb</find>
+      <find>fpp</find>
+      <find>sim.realize</find>
+      <find>sim.multi</find>
     </findStrings>
     <replaceStrings>
       <replace>lamb</replace>
@@ -70,6 +108,11 @@
       <replace>line_pam</replace>
       <replace>sl.sim_multi</replace>
       <replace>jump_pa</replace>
+      <replace>sim</replace>
+      <replace>multi</replace>
+      <replace>lbd</replace>
+      <replace>realize.single</replace>
+      <replace>realize.multi</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -88,11 +131,14 @@
         <option value="$PROJECT_DIR$/sim_levy.py" />
         <option value="$PROJECT_DIR$/func_dist.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/task.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/src/sim_levy.py" />
+        <option value="$PROJECT_DIR$/src/visualize.py" />
         <option value="$PROJECT_DIR$/src/sim.py" />
         <option value="$PROJECT_DIR$/src/task.py" />
+        <option value="$PROJECT_DIR$/src/simulate.py" />
+        <option value="$PROJECT_DIR$/src/main.py" />
+        <option value="$PROJECT_DIR$/task.py" />
       </list>
     </option>
   </component>
@@ -165,12 +211,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561029986746</updated>
       <workItem from="1561029990753" duration="29508000" />
-      <workItem from="1561367052707" duration="935000" />
+      <workItem from="1561367052707" duration="4864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30443000" />
+    <option name="totallyTimeSpent" value="34372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -183,9 +229,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.09585121" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07796852" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -204,7 +249,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="5" sideWeight="0.4970297" weight="0.1509299" />
+      <window_info anchor="right" id="Terminal" order="5" sideWeight="0.4970297" visible="true" weight="0.18025751" />
       <window_info anchor="right" id="Python Console" order="6" sideWeight="0.5029703" side_tool="true" weight="0.22417465" />
     </layout>
     <layout-to-restore>
@@ -263,16 +308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="120" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="120" />
-          <folding>
-            <element signature="e#1#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -280,20 +315,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sim.py">
+    <entry file="file://$PROJECT_DIR$/src/visualize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        <state relative-caret-position="163">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/task.py">
+    <entry file="file://$PROJECT_DIR$/src/realize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-445">
-          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        <state relative-caret-position="592">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+          <folding>
+            <element signature="e#69#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
             <element signature="e#69#90#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="120" lean-forward="true" selection-start-column="120" selection-end-column="120" />
         </state>
       </provider>
     </entry>
