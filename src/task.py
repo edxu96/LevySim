@@ -58,8 +58,8 @@ def do4():
     mu = 1  # mean = 1 / beta
     sigma = 1  # mean = 1 / beta
     lamb = 1  # mean = 1 / beta
-    n_sample = 100
-    n_sim = 10
+    n_sample = 1000
+    n_sim = 100
     func_dist_y = [simulate.select_dist(1), simulate.select_dist_erlang(1),
                    simulate.select_dist_hyperexpon(1, 0.5, 1, 0.5), simulate.select_dist_pareto(2, 0.5)]
     for i in range(len(func_dist_y)):
