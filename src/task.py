@@ -133,12 +133,15 @@ def test():
 
 def test_dist_exp(mean):
     print("mean = {} ;".format(mean))
+    lbd = 1 / mean
     list_result1 = [0] * 10000
     list_result2 = [0] * 10000
+    list_result3 = [0] * 10000
     for i in range(10000):
-        lbd = 1 / mean
         list_result1[i] = random.expovariate(lbd)
         list_result2[i] = st.expon(scale=1 / lbd).rvs(size=1)[0]
+        list_result3[i] = np.random.choice(a=[random.expovariate(lbd), random.expovariate(lbd)], size=1,
+                                           p=[0.5, 0.5])[0]
     print(sum(list_result1) / 10000)
     print(sum(list_result2) / 10000)
 

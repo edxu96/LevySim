@@ -38,14 +38,14 @@ def hyperexp(p1, lbd1, p2, lbd2):
         Build-in Python: pdf = f_{X}(x)=\sum_{i=1}^{n} f_{Y_{i}}(x) p_{i}
     
     :param p1: probability to choose type 1
-           lamda1: the lambda value of type 1's exponential distribution
+           lbd1: the lambda value of type 1's exponential distribution
            p1: probability to choose type 2
-           lamda1: the lambda value of type 2's exponential distribution
+           lbd2: the lambda value of type 2's exponential distribution
            remind!!!!! scale can only be
            
     : return: generated value once
     """
-    return np.random.choice(a=[st.expon.rvs(scale=1/lbd1), st.expon.rvs(scale=1/lbd2)], size=1, p=[p1, 1-p1])[0]
+    return np.random.choice(a=[random.expovariate(lbd1), random.expovariate(lbd2)], size=1, p=[p1, 1-p1])[0]
 
 
 def pareto(alpha, scale):
