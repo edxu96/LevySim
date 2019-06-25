@@ -60,7 +60,7 @@ def do4():
     n_sample = 1000
     n_sim = 10
     list_func_dist_y = [simulate.select_dist(1), simulate.select_dist_erlang(1),
-                        simulate.select_dist_hyperexpon(1, 0.5, 1, 0.5), simulate.select_dist_pareto(2, 0.5)]
+                        simulate.select_dist_hyperexpon(0.2, 1/4, 0.8, 4), simulate.select_dist_pareto(2, 0.5)]
     for i in range(len(list_func_dist_y)):
         _, _, _, mat_s, mat_p, mat_a, mat_m, _ = realize.multi(mu, sigma, lbd, list_func_dist_y[i], n_sample, n_sim)
         vi.line_multi_pa(mat_s, mat_p, mat_a, 'task4-' + str(i))
