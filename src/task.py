@@ -87,7 +87,7 @@ def do5_2(mu, sigma, lbd, beta, n_sample, n_sim, n_a_raw):
 
 def do5_3(mu, sigma, lbd, n_sample, n_sim, n_a_raw):
     list_func_dist_y = [simulate.select_dist(1), simulate.select_dist_erlang(1),
-                        simulate.select_dist_hyperexpon(1, 0.5, 1, 0.5), simulate.select_dist_pareto(2, 0.5)]
+                        simulate.select_dist_hyperexpon(0.2, 1/4, 0.8, 4), simulate.select_dist_pareto(2, 0.5)]
     list_label = ['Exp', 'Erland', 'Hyper-Exp', 'Pareto']
     list_list_a, list_list_fpp = simulate.fpp_series_multi(mu, sigma, lbd, list_func_dist_y, n_sample, n_sim, n_a_raw)
     vi.line_fpp_multi(list_list_a, list_list_fpp, list_label, 'task5-4')
@@ -99,8 +99,8 @@ def do5():
     sigma = 1
     lbd = 1
     beta = 1  # [beta in distribution of y], mean = 1 / beta
-    n_sample = 100
-    n_sim = 10
+    n_sample = 1000
+    n_sim = 100
     # 2,  Task 5.1: Calculate fpp under different a
     # do5_1(mu, sigma, lbd, beta, n_sample, n_sim)
     # 3,  Task 5.2: Plot the fpp as line with exponential distribution
@@ -144,5 +144,6 @@ def test_dist_exp(mean):
                                            p=[0.5, 0.5])[0]
     print(sum(list_result1) / 10000)
     print(sum(list_result2) / 10000)
+    print(sum(list_result3) / 10000)
 
 
