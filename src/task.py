@@ -53,7 +53,6 @@ def do3():
 def do4():
     """
     Plot the multiple simulation on different Y distribution
-    :return:
     """
     mu = 0.1
     sigma = 1
@@ -84,7 +83,7 @@ def do5():
     list_fpp = simulate.fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a)
     print(list_a)
     print(list_fpp)
-    vi.line_fpp_multi(list_a, list_fpp, 'task5')
+    # vi.line_fpp_multi(list_a, list_fpp, 'task5')
 
 
 def test():

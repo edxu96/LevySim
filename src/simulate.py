@@ -66,11 +66,12 @@ def fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a):
     """
     print("--------------------------------------------------------------------------------\n"
           "Calculate First Passage Probabilities of Different a")
+    _, _, list_m_result, _, _, _, _, _ = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim)
     n_a = len(list_a)
-    list_fpp = [0] * n_a
     print("    n_a = {}".format(n_a))
-    for i in range(n_a):
-        _, _, _, _, _, _, _, list_fpp[i] = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a[i])
+    list_fpp = [0] * n_a
+    for i in range(0, n_a):
+        list_fpp[i] = sum([i > list_a[i] for i in list_m_result]) / len(list_m_result)
     return list_fpp
 
 
