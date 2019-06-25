@@ -74,21 +74,28 @@ def fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a):
     return list_fpp
 
 
-def plot_fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw, name_fig):
+def fpp_series(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw):
     print("--------------------------------------------------------------------------------\n"
           "Calculate First Passage Probabilities of Different a")
-    _, _, list_m_result, _, _, _, _, _ = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim)
+    _, _, list_m_result, mat_s, mat_p, mat_a, _, _ = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim)
     step = (max(list_m_result) - min(list_m_result)) / n_a_raw
-    list_a = [0] * (n_a_raw + 2)
-    for i in range(n_a_raw + 2):
-        list_a[i] = min(list_m_result) + step * (i - 1)
+    list_a = [0] * (n_a_raw + 6)
+    for i in range(n_a_raw + 6):
+        list_a[i] = min(list_m_result) + step * (i - 3)
     n_a = len(list_a)
     list_fpp = [0] * n_a
     for j in range(n_a):
         list_fpp[j] = sum([i > list_a[j] for i in list_m_result]) / len(list_m_result)
-    vi.line_fpp_multi(list_a, list_fpp, name_fig)
-    return list_fpp
+    return list_a, list_fpp, mat_s, mat_p, mat_a
 
 
+def fpp_series_multi(mu, sigma, lbd, list_func_dist_y, n_sample, n_sim, n_a_raw):
+    n_dist = len(list_func_dist_y)
+    list_list_a = [None] * n_dist
+    list_list_fpp = [None] * n_dist
+    for i in range(n_dist):
+        list_list_a[i], list_list_fpp[i], _, _, _ = fpp_series(
+            mu, sigma, lbd, list_func_dist_y[i], n_sample, n_sim, n_a_raw)
+    return list_list_a, list_list_fpp
 
 

@@ -117,17 +117,36 @@ def line_pam(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
 
 
-def line_fpp_multi(list_a, list_prob, name_fig, whe_show=False):
+def line_fpp(list_a, list_prob, name_fig, whe_show=False):
     fig = plt.figure(figsize=(18, 8))
     plt.style.use("fivethirtyeight")
     plt.plot(list_a, list_prob)  # , linestyle='--', marker='o'
     plt.xlabel('a')
     plt.ylabel('Probability')
-    plt.xticks(ticks=list_a, labels=list_a)
+    # plt.xticks(ticks=list_a, labels=list_a)
     # plt.annotate(
     #     'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
     #     xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
     plt.title('Line Plot of First Passage Probability under Different a', fontsize=15)
+    plt.tight_layout()
+    if whe_show:  # Whether to show the plot
+        plt.show()
+    fig.savefig('images/' + name_fig + '.png', bbox_inches='tight')
+
+
+def line_fpp_multi(list_list_a, list_list_prob, list_label, name_fig, whe_show=False):
+    fig = plt.figure(figsize=(18, 8))
+    plt.style.use("fivethirtyeight")
+    for i in range(len(list_list_a)):
+        plt.plot(list_list_a[i], list_list_prob[i], label=list_label[i])  # , linestyle='--', marker='o'
+    plt.xlabel('a')
+    plt.ylabel('Probability')
+    # plt.xticks(ticks=list_a, labels=list_a)
+    # plt.annotate(
+    #     'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
+    #     xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
+    plt.title('Line Plot of First Passage Probability under Different a', fontsize=15)
+    plt.legend()
     plt.tight_layout()
     if whe_show:  # Whether to show the plot
         plt.show()

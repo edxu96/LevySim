@@ -88,7 +88,7 @@ def multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, a=False):
         mat_a[i, :] = df.a
         mat_m[i, :] = df.m
     time_elapse = time.time() - time_start
-    print("Time elapsed = {} ;".format(time_elapse))
+    print("    Time elapsed = {} ;".format(time_elapse))
     # Calculate first passage probability given a of sim.multi
     if not a:
         fpp = None
