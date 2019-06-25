@@ -68,13 +68,24 @@ def fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a):
           "Calculate First Passage Probabilities of Different a")
     _, _, list_m_result, _, _, _, _, _ = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim)
     n_a = len(list_a)
-    print("    n_a = {}".format(n_a))
     list_fpp = [0] * n_a
-    for i in range(0, n_a):
-        list_fpp[i] = sum([i > list_a[i] for i in list_m_result]) / len(list_m_result)
+    for j in range(n_a):
+        list_fpp[j] = sum([i > list_a[j] for i in list_m_result]) / len(list_m_result)
     return list_fpp
 
 
+def plot_fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw, name_fig):
+    print("--------------------------------------------------------------------------------\n"
+          "Calculate First Passage Probabilities of Different a")
+    _, _, list_m_result, _, _, _, _, _ = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim)
+    step = (max(list_m_result) - min(list_m_result)) / n_a_raw
+    list_a = range(min(list_m_result) - step, max(list_m_result) + step, step)
+    n_a = len(list_a)
+    list_fpp = [0] * n_a
+    for j in range(n_a):
+        list_fpp[j] = sum([i > list_a[j] for i in list_m_result]) / len(list_m_result)
+    vi.line_fpp_multi(list_a, list_fpp, name_fig)
+    return list_fpp
 
 
 

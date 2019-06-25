@@ -73,17 +73,19 @@ def do5():
     lbd = 1
     beta = 1  # [beta in distribution of y], mean = 1 / beta
     func_dist_y = simulate.select_dist(beta)
-    n_sample = 10
-    n_sim = 1
-    # Set list of a
+    n_sample = 10000
+    n_sim = 10
+    # # Set list of a
     # list_a = [1, 10, 1000, 100000]
-    # list_a = list(range(2750, 3250, 50))
-    list_a = [1]
-    # Being Simulation
-    list_fpp = simulate.fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a)
-    print(list_a)
-    print(list_fpp)
-    # vi.line_fpp_multi(list_a, list_fpp, 'task5')
+    # # list_a = list(range(2750, 3250, 50))
+    # # list_a = [1]
+    # # Being Simulation
+    # list_fpp = simulate.fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, list_a)
+    # print("    list_a = {} ;".format(list_a))
+    # print("    list_fpp = {} ;".format(list_fpp))
+    #
+    n_a_raw = 20
+    simulate.plot_fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw, 'task5-1')
 
 
 def test():
