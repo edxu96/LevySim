@@ -79,7 +79,9 @@ def plot_fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw, name_f
           "Calculate First Passage Probabilities of Different a")
     _, _, list_m_result, _, _, _, _, _ = realize.multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim)
     step = (max(list_m_result) - min(list_m_result)) / n_a_raw
-    list_a = range(min(list_m_result) - step, max(list_m_result) + step, step)
+    list_a = [0] * (n_a_raw + 2)
+    for i in range(n_a_raw + 2):
+        list_a[i] = min(list_m_result) + step * (i - 1)
     n_a = len(list_a)
     list_fpp = [0] * n_a
     for j in range(n_a):

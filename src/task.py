@@ -68,7 +68,7 @@ def do4():
         
 def do5():
     # Set Parameters
-    mu = 1
+    mu = - 1
     sigma = 1
     lbd = 1
     beta = 1  # [beta in distribution of y], mean = 1 / beta
@@ -85,7 +85,7 @@ def do5():
     # print("    list_fpp = {} ;".format(list_fpp))
     #
     n_a_raw = 20
-    simulate.plot_fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw, 'task5-1')
+    simulate.plot_fpp_multi(mu, sigma, lbd, func_dist_y, n_sample, n_sim, n_a_raw, 'task5-2')
 
 
 def test():
