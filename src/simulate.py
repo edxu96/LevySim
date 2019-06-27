@@ -16,8 +16,8 @@ def select_dist(para):
     return func
 
 
-def select_dist_erlang(shape):
-    func = partial(fd.erlang, shape=shape)
+def select_dist_erlang(shape, scale):
+    func = partial(fd.erlang, shape=shape, scale = scale)
     return func
 
 

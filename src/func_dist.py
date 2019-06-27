@@ -21,7 +21,7 @@ def exp(lbd):
     return random.expovariate(lbd)
 
 
-def erlang(shape):
+def erlang(shape, scale):
     """
     Generate x from exponential distribution
         Built-in Python: pdf = f(x ; k, \mu) =\frac{x^{k-1} e^{-\frac{x}{\mu}}}{\mu^{k}(k-1) !} \quad
@@ -29,7 +29,7 @@ def erlang(shape):
     :param shape: when shape parameter k equals one, it simplifies to the exponential distribution.
     :return: generated value once
     """
-    return st.erlang(shape).rvs(size=1)[0]
+    return st.erlang(a = shape, scale = scale).rvs(size=1)[0]
 
 
 def hyperexp(p1, lbd1, p2, lbd2):

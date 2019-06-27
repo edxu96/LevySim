@@ -35,7 +35,7 @@ def hist(list_result, num_bin, str_var, name_fig, whe_show=False):
     """
     list_position, list_density = get_pdf(list_result, num_bin)
     n_sim = len(list_result)
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     plt.style.use("fivethirtyeight")
     plt.plot(list_position, list_density)
     plt.xlabel('Class')
@@ -52,7 +52,7 @@ def jump_pa(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     """
     Scatter plot of all the jumps
     """
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     # plt.xkcd()
     plt.style.use("fivethirtyeight")
     for i in range(len(list_s)):
@@ -102,7 +102,7 @@ def line_pam(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
     :param whe_show:
     :return:
     """
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     plt.style.use("fivethirtyeight")
     list_ss, list_pa = inter_pa(list_s, list_p, list_a)
     plt.plot(list_ss, list_pa, label='X')
@@ -118,7 +118,7 @@ def line_pam(list_s, list_p, list_a, list_m, name_fig, whe_show=False):
 
 
 def line_fpp(list_a, list_prob, name_fig, whe_show=False):
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     plt.style.use("fivethirtyeight")
     plt.plot(list_a, list_prob)  # , linestyle='--', marker='o'
     plt.xlabel('a')
@@ -135,7 +135,7 @@ def line_fpp(list_a, list_prob, name_fig, whe_show=False):
 
 
 def line_fpp_multi(list_list_a, list_list_prob, list_label, name_fig, whe_show=False):
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     plt.style.use("fivethirtyeight")
     for i in range(len(list_list_a)):
         plt.plot(list_list_a[i], list_list_prob[i], label=list_label[i])  # , linestyle='--', marker='o'
@@ -157,7 +157,7 @@ def line_multi_pa(mat_s, mat_p, mat_a, name_fig, whe_show=False):
     n_sim = len(mat_p[:, 1])
     if n_sim != len(mat_a[:, 1]):
         logging.error("len(mat_p[:, 1]) and len(mat_a[:, 1]) are not equal!")
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     plt.style.use("fivethirtyeight")
     for i in range(n_sim):
         list_ss, list_pa = inter_pa(mat_s[i, :], mat_p[i, :], mat_a[i, :])
@@ -192,7 +192,7 @@ def line_simulate_multi(list_mat_s, list_mat_p, list_mat_a, name_fig, whe_show=F
     n_sim = len(list_mat_p[1][:, 1])
     # if n_sim != len(mat_a_1[:, 1]):
     #     logging.error("len(mat_p[:, 1]) and len(mat_a[:, 1]) are not equal!")
-    fig = plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(10, 8))
     plt.style.use("fivethirtyeight")
     list_color = get_list_color(n_set)
     # Plot the lines
