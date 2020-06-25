@@ -8,8 +8,6 @@ import visualize as vi
 from functools import partial
 import logging
 
-########################################################################################################################
-
 
 def select_dist(para):
     func = partial(fd.exp, lbd=para)
@@ -30,7 +28,7 @@ def select_dist_pareto(alpha, scale):
     func = partial(fd.pareto, alpha=alpha, scale=scale)
     return func
 
-    
+
 def check_len(list_list):
     """
     Check if the lengths of lists in the list_list are the same
@@ -97,5 +95,3 @@ def fpp_series_multi(mu, sigma, lbd, list_func_dist_y, n_sample, n_sim, n_a_raw)
         list_list_a[i], list_list_fpp[i], _, _, _ = fpp_series(
             mu, sigma, lbd, list_func_dist_y[i], n_sample, n_sim, n_a_raw)
     return list_list_a, list_list_fpp
-
-
